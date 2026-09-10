@@ -1,400 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MR. VICKY — Learn Grow Succeed</title>
-    <meta name="description" content="MR. VICKY — Money Earning, Finance, Website Development & New Tools. Learn Grow Succeed.">
-    <link rel="icon" href="https://res.cloudinary.com/acqrwkcn/image/upload/v1788937188/1000124621.png" type="image/png">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
-        *{margin:0;padding:0;box-sizing:border-box}
-        :root{
-            --blue:#00d4ff;--blue-glow:rgba(0,212,255,0.4);
-            --orange:#ff6b1a;--orange-glow:rgba(255,107,26,0.4);
-            --gold:#ffb800;--purple:#6e8bff;
-            --teal:#00e5cc;--teal-glow:rgba(0,229,204,0.3);
-            --dark:#050208;--dark2:#0a0612;--dark3:#0e0a1a;
-            --glass:rgba(255,255,255,0.035);--glass-border:rgba(255,255,255,0.07);--glass-hover:rgba(255,255,255,0.06);
-            --text:#f5f5fa;--text-dim:#d0d0e0;--text-muted:#7a7a92;
-        }
-        body{font-family:'Outfit',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--dark);color:var(--text);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-
-        .bg-layer{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
-        .bg-glow{background:radial-gradient(ellipse 55% 40% at 15% 0%,rgba(0,212,255,0.12) 0%,transparent 55%),radial-gradient(ellipse 50% 35% at 90% 10%,rgba(255,107,26,0.1) 0%,transparent 55%),radial-gradient(ellipse 60% 40% at 50% 100%,rgba(110,139,255,0.06) 0%,transparent 60%)}
-        .bg-grid{background-image:linear-gradient(rgba(255,255,255,0.012) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.012) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse at center,black 15%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at center,black 15%,transparent 70%)}
-        .bg-orb{border-radius:50%;filter:blur(120px);animation:orbDrift 18s ease-in-out infinite}
-        .orb1{width:400px;height:400px;background:rgba(0,212,255,0.04);top:0%;left:-15%}
-        .orb2{width:350px;height:350px;background:rgba(255,107,26,0.03);bottom:10%;right:-12%;animation-delay:-9s}
-        .orb3{width:250px;height:250px;background:rgba(0,229,204,0.02);top:45%;left:55%;animation-delay:-4s}
-        @keyframes orbDrift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(50px,-40px) scale(1.1)}66%{transform:translate(-30px,30px) scale(0.9)}}
-
-        .container{position:relative;z-index:1;max-width:580px;margin:0 auto;padding:0 16px 50px;perspective:1200px}
-
-        /* Hero Banner */
-        .hero{position:relative;width:100%;height:200px;border-radius:0 0 28px 28px;overflow:hidden;margin-bottom:-42px;box-shadow:0 12px 50px rgba(0,0,0,0.6);animation:heroIn 1s cubic-bezier(0.22,1,0.36,1) both}
-        .hero img{width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.05);animation:slowZoom 20s ease-in-out infinite alternate}
-        .hero::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:100px;background:linear-gradient(to bottom,transparent 30%,rgba(5,2,8,0.7) 70%,var(--dark));pointer-events:none}
-        @keyframes slowZoom{from{transform:scale(1.05)}to{transform:scale(1.15)}}
-        @keyframes heroIn{from{opacity:0;transform:translateY(-30px) scale(0.95)}to{opacity:1;transform:translateY(0) scale(1)}}
-
-        /* Profile */
-        .profile-wrap{position:relative;width:100px;height:100px;margin:0 auto;animation:profileIn 0.8s cubic-bezier(0.34,1.56,0.64,1) 0.3s both}
-        .profile-ring{position:absolute;inset:-5px;border-radius:50%;background:conic-gradient(from 0deg,var(--blue),var(--purple),var(--orange),var(--gold),var(--blue));animation:rotateRing 5s linear infinite;filter:blur(0.5px)}
-        .profile-ring::after{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--dark)}
-        .profile{width:100%;height:100%;border-radius:50%;overflow:hidden;position:relative;z-index:1;border:3px solid var(--dark);box-shadow:0 0 30px var(--blue-glow),0 0 60px rgba(255,107,26,0.1);animation:profileGlow 4s ease-in-out infinite}
-        .profile img{width:100%;height:100%;object-fit:cover}
-        @keyframes profileGlow{0%,100%{box-shadow:0 0 25px var(--blue-glow),0 0 50px rgba(255,107,26,0.08)}50%{box-shadow:0 0 40px var(--blue-glow),0 0 70px rgba(255,107,26,0.15)}}
-        @keyframes rotateRing{to{transform:rotate(360deg)}}
-        @keyframes profileIn{from{opacity:0;transform:scale(0.5) rotate(-180deg)}to{opacity:1;transform:scale(1) rotate(0)}}
-
-        /* Header */
-        .header{text-align:center;padding:10px 0 0}
-        .channel-name{font-family:'Sora',sans-serif;font-size:2rem;font-weight:800;letter-spacing:5px;background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 30%,var(--orange) 65%,var(--gold) 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-transform:uppercase;animation:gradientShift 5s ease-in-out infinite,nameIn 0.8s ease 0.4s both}
-        @keyframes gradientShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-        @keyframes nameIn{from{opacity:0;transform:translateY(15px);letter-spacing:15px}to{opacity:1;transform:translateY(0);letter-spacing:5px}}
-        .tagline{font-size:0.78rem;font-style:italic;margin-top:4px;letter-spacing:2px;font-weight:600;animation:fadeUp 0.6s ease 0.5s both}
-        .tagline .hl{color:var(--gold);text-shadow:0 0 15px rgba(255,184,0,0.6)}
-        .subtitle{font-size:0.65rem;color:var(--text-muted);margin-top:3px;letter-spacing:0.5px;animation:fadeUp 0.6s ease 0.6s both}
-
-        /* Social Icons */
-        .socials{display:flex;justify-content:center;gap:10px;margin:14px 0 24px;animation:fadeUp 0.6s ease 0.7s both}
-        .social-icon{width:42px;height:42px;border-radius:13px;background:var(--glass);border:1px solid var(--glass-border);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);backdrop-filter:blur(10px)}
-        .social-icon svg{width:18px;height:18px;fill:var(--text-dim);transition:all 0.3s ease}
-        .social-icon:hover{transform:translateY(-5px) scale(1.12);border-color:rgba(255,0,0,0.4);background:rgba(255,0,0,0.08);box-shadow:0 10px 30px rgba(255,0,0,0.2)}
-        .social-icon:hover svg{fill:#ff0000}
-        .social-icon:nth-child(2):hover{border-color:rgba(255,107,26,0.4);background:rgba(255,107,26,0.08);box-shadow:0 10px 30px var(--orange-glow)}
-        .social-icon:nth-child(2):hover svg{fill:var(--orange)}
-        .social-icon:nth-child(3):hover{border-color:rgba(110,139,255,0.4);background:rgba(110,139,255,0.08);box-shadow:0 10px 30px rgba(110,139,255,0.2)}
-        .social-icon:nth-child(3):hover svg{fill:var(--purple)}
-
-        /* Section Title */
-        .section-title{font-size:0.68rem;text-transform:uppercase;letter-spacing:3px;color:var(--text-muted);margin:24px 0 12px;display:flex;align-items:center;gap:8px;font-weight:700;animation:fadeUp 0.5s ease both}
-        .section-title svg{width:14px;height:14px;fill:var(--blue)}
-        .section-title::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--glass-border),transparent)}
-
-        /* === Video Cards (NEW PREMIUM DESIGN) === */
-        .video-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:18px;overflow:hidden;backdrop-filter:blur(12px);position:relative;margin-bottom:14px;transition:all 0.45s cubic-bezier(0.34,1.56,0.64,1);transform-style:preserve-3d;animation:cardIn 0.6s cubic-bezier(0.22,1,0.36,1) both;text-decoration:none;color:var(--text)}
-        .video-card:nth-child(2){animation-delay:0.1s}.video-card:nth-child(3){animation-delay:0.2s}.video-card:nth-child(4){animation-delay:0.3s}.video-card:nth-child(5){animation-delay:0.4s}
-        @keyframes cardIn{from{opacity:0;transform:translateY(25px) rotateX(-8deg)}to{opacity:1;transform:translateY(0) rotateX(0)}}
-        .video-card:hover{border-color:rgba(0,212,255,0.2);box-shadow:0 18px 50px rgba(0,212,255,0.08),0 8px 20px rgba(0,0,0,0.4);transform:translateY(-3px)}
-
-        .video-thumb-wrap{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:linear-gradient(135deg,var(--dark3),var(--dark2))}
-        .video-thumb-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease}
-        .video-card:hover .video-thumb-wrap img{transform:scale(1.06)}
-        .video-thumb-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.5) 100%);transition:opacity 0.3s}
-        .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;background:rgba(0,0,0,0.6);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;backdrop-filter:blur(6px);transition:all 0.35s ease;border:2px solid rgba(255,255,255,0.2)}
-        .play-btn svg{width:22px;height:22px;fill:#fff;margin-left:3px}
-        .video-card:hover .play-btn{background:rgba(255,0,0,0.9);border-color:rgba(255,0,0,0.5);transform:translate(-50%,-50%) scale(1.15);box-shadow:0 0 30px rgba(255,0,0,0.5)}
-
-        .badge-new{position:absolute;top:10px;left:10px;z-index:3;display:inline-flex;align-items:center;gap:4px;font-size:0.58rem;padding:4px 9px;border-radius:7px;background:linear-gradient(135deg,var(--orange),var(--gold));color:#fff;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;animation:badgePulse 2s ease-in-out infinite;backdrop-filter:blur(4px)}
-        @keyframes badgePulse{0%,100%{opacity:1;box-shadow:0 0 10px rgba(255,107,26,0.5)}50%{opacity:0.85;box-shadow:0 0 18px rgba(255,107,26,0.7)}}
-
-        .video-info{padding:14px 16px 10px}
-        .video-title-row{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
-        .video-title{font-size:0.88rem;font-weight:600;line-height:1.35;flex:1}
-        .video-ext-link{flex-shrink:0;width:22px;height:22px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);transition:all 0.3s ease;margin-top:1px}
-        .video-ext-link svg{width:15px;height:15px;fill:currentColor}
-        .video-card:hover .video-ext-link{color:var(--blue);transform:translate(2px,-2px)}
-        .video-meta{font-size:0.68rem;color:var(--text-muted);margin-top:5px;display:flex;gap:6px;align-items:center}
-
-        /* Video Resources Button */
-        .resources-btn{display:flex;align-items:center;justify-content:space-between;width:100%;padding:10px 16px;background:rgba(0,229,204,0.04);border-top:1px solid rgba(255,255,255,0.04);color:var(--teal);font-size:0.72rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;font-family:inherit;letter-spacing:0.3px;border:none;text-align:left}
-        .resources-btn-left{display:flex;align-items:center;gap:6px}
-        .resources-btn svg{width:14px;height:14px;fill:currentColor;transition:transform 0.3s ease}
-        .resources-btn .chev{width:12px;height:12px;transition:transform 0.3s ease}
-        .resources-btn .chev svg{width:12px;height:12px}
-        .resources-btn:hover{background:rgba(0,229,204,0.08)}
-        .resources-btn.expanded .chev{transform:rotate(180deg)}
-
-        .resources-content{max-height:0;overflow:hidden;transition:max-height 0.4s ease;padding:0 16px}
-        .resources-content.expanded{max-height:2000px;padding:0 16px 14px}
-
-        .resource-placeholder{font-size:0.68rem;color:var(--text-muted);font-style:italic;padding:8px 0}
-
-        .prompt-card{background:rgba(0,0,0,0.3);border:1px solid rgba(0,229,204,0.12);border-radius:11px;padding:12px;margin-top:10px;position:relative;animation:fadeUp 0.4s ease}
-        .prompt-card:first-child{margin-top:0}
-        .prompt-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
-        .prompt-label{display:flex;align-items:center;gap:6px;font-size:0.7rem;font-weight:700;color:var(--teal);letter-spacing:0.3px}
-        .prompt-label svg{width:13px;height:13px;fill:var(--teal)}
-        .copy-btn{font-size:0.62rem;padding:4px 10px;border-radius:7px;background:rgba(0,229,204,0.1);border:1px solid rgba(0,229,204,0.2);color:var(--teal);cursor:pointer;transition:all 0.3s ease;font-family:inherit;font-weight:600;letter-spacing:0.3px}
-        .copy-btn:hover{background:rgba(0,229,204,0.2);transform:scale(1.05)}
-        .copy-btn.copied{background:rgba(0,229,204,0.3);color:#fff}
-        .prompt-text{font-size:0.73rem;line-height:1.55;color:var(--text-dim);white-space:pre-wrap;word-break:break-word}
-
-        /* Form Card */
-        .form-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;padding:18px;backdrop-filter:blur(12px);box-shadow:0 8px 32px rgba(0,0,0,0.3);animation:fadeUp 0.6s ease 0.3s both;transition:all 0.3s}
-        .form-card:hover{border-color:rgba(255,255,255,0.1)}
-        .form-group{margin-bottom:12px}
-        .form-group label{display:block;font-size:0.7rem;font-weight:600;color:var(--text-dim);margin-bottom:5px;letter-spacing:0.5px}
-        .form-input,.form-textarea{width:100%;padding:11px 13px;background:rgba(0,0,0,0.35);border:1px solid var(--glass-border);border-radius:11px;color:var(--text);font-size:0.85rem;font-family:inherit;transition:all 0.3s;outline:none}
-        .form-input::placeholder,.form-textarea::placeholder{color:var(--text-muted)}
-        .form-input:focus,.form-textarea:focus{border-color:rgba(0,212,255,0.4);background:rgba(0,212,255,0.04);box-shadow:0 0 0 3px rgba(0,212,255,0.08),0 0 20px rgba(0,212,255,0.1)}
-        .form-textarea{min-height:75px;resize:vertical}
-        .form-btn{width:100%;padding:12px;background:linear-gradient(135deg,var(--blue) 0%,var(--purple) 50%,var(--orange) 100%);background-size:200% 200%;border:none;border-radius:12px;color:#fff;font-size:0.85rem;font-weight:700;letter-spacing:1.5px;cursor:pointer;transition:all 0.35s;font-family:inherit;text-transform:uppercase;position:relative;overflow:hidden;animation:gradientShift 4s ease-in-out infinite}
-        .form-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.2),transparent 50%);opacity:0;transition:opacity 0.3s}
-        .form-btn:hover{transform:translateY(-2px) scale(1.01);box-shadow:0 10px 30px var(--blue-glow),0 5px 15px var(--orange-glow)}
-        .form-btn:hover::before{opacity:1}
-        .form-btn:active{transform:translateY(0) scale(0.99)}
-
-        .tabs{display:flex;gap:7px;margin-bottom:12px}
-        .tab-btn{flex:1;padding:9px;background:var(--glass);border:1px solid var(--glass-border);border-radius:11px;color:var(--text-dim);font-size:0.75rem;font-weight:600;cursor:pointer;transition:all 0.3s;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:5px}
-        .tab-btn svg{width:14px;height:14px;fill:currentColor}
-        .tab-btn.active{background:rgba(0,212,255,0.08);border-color:rgba(0,212,255,0.3);color:var(--blue);box-shadow:0 0 15px rgba(0,212,255,0.1)}
-        .tab-btn:hover:not(.active){background:var(--glass-hover);color:var(--text);transform:translateY(-1px)}
-        .tab-content{display:none}
-        .tab-content.active{display:block;animation:fadeUp 0.4s ease}
-
-        .footer{text-align:center;margin-top:30px;padding-top:18px;border-top:1px solid var(--glass-border);animation:fadeUp 0.6s ease 0.5s both}
-        .footer p{font-size:0.68rem;color:var(--text-muted);line-height:1.6}
-        .footer .heart{color:var(--orange)}
-
-        @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-
-        @media(max-width:480px){
-            .channel-name{font-size:1.6rem;letter-spacing:3px}
-            .hero{height:160px}
-            .video-title{font-size:0.82rem}
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>MR. VICKY — Learn Grow Succeed</title>
+<meta name="description" content="MR. VICKY — Money Earning, Finance, Website Building & New Tools. Learn Grow Succeed.">
+<link rel="icon" href="https://res.cloudinary.com/acqrwkcn/image/upload/v1788937188/1000124621.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.hero-heading{background:linear-gradient(180deg,#646973 0%,#BBCCD7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity 0.7s cubic-bezier(0.25,0.1,0.25,1),transform 0.7s cubic-bezier(0.25,0.1,0.25,1)}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.hero{min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;position:relative}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:24px 24px 0}
+@media(min-width:768px){.navbar{padding:32px 40px 0}}
+.nav-link{color:#D7E2EA;font-weight:500;text-transform:uppercase;letter-spacing:0.05em;font-size:0.875rem;transition:opacity 200ms ease;text-decoration:none}
+@media(min-width:768px){.nav-link{font-size:1.125rem}}
+@media(min-width:1024px){.nav-link{font-size:1.4rem}}
+.nav-link:hover{opacity:0.7}
+.hero-heading-wrap{overflow:hidden;margin-top:24px;width:100%}
+@media(min-width:640px){.hero-heading-wrap{margin-top:16px}}
+@media(min-width:768px){.hero-heading-wrap{margin-top:-20px}}
+.hero h1{font-weight:900;text-transform:uppercase;letter-spacing:-0.025em;line-height:0.9;white-space:nowrap;width:100%;font-size:14vw;text-align:center}
+@media(min-width:640px){.hero h1{font-size:15vw}}
+@media(min-width:768px){.hero h1{font-size:16vw}}
+@media(min-width:1024px){.hero h1{font-size:17.5vw}}
+.hero-portrait{position:absolute;left:50%;z-index:10;width:280px;top:50%;transform:translate(-50%,-50%)}
+@media(min-width:640px){.hero-portrait{width:360px;top:auto;transform:translateX(-50%);bottom:0}}
+@media(min-width:768px){.hero-portrait{width:440px}}
+@media(min-width:1024px){.hero-portrait{width:520px}}
+.hero-portrait img{width:100%;border-radius:20px;object-fit:cover}
+.hero-bottom{display:flex;justify-content:space-between;align-items:flex-end;padding:0 24px 28px;margin-top:auto;position:relative;z-index:20}
+@media(min-width:640px){.hero-bottom{padding:0 40px 32px}}
+@media(min-width:768px){.hero-bottom{padding:0 40px 40px}}
+.hero-text-left{color:#D7E2EA;font-weight:300;text-transform:uppercase;letter-spacing:0.04em;line-height:1.3;font-size:clamp(0.75rem,1.4vw,1.5rem);max-width:160px}
+@media(min-width:640px){.hero-text-left{max-width:220px}}
+@media(min-width:768px){.hero-text-left{max-width:260px}}
+.contact-btn{display:inline-flex;align-items:center;justify-content:center;border-radius:9999px;padding:12px 32px;font-size:0.75rem;color:#fff;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;background:linear-gradient(123deg,#18011F 7%,#B600A8 37%,#7621B0 72%,#BE4C00 100%);box-shadow:0 4px 4px rgba(181,1,167,0.25),inset 4px 4px 12px #7721B1;outline:2px solid #fff;outline-offset:-3px;border:none;cursor:pointer;text-decoration:none;transition:transform 0.3s ease,box-shadow 0.3s ease}
+@media(min-width:640px){.contact-btn{padding:14px 40px;font-size:0.875rem}}
+@media(min-width:768px){.contact-btn{padding:16px 48px;font-size:1rem}}
+.contact-btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 8px 20px rgba(181,1,167,0.4),inset 4px 4px 12px #7721B1}
+.marquee-section{background:#0C0C0C;padding:96px 0 40px;overflow:hidden}
+@media(min-width:640px){.marquee-section{padding-top:128px}}
+@media(min-width:768px){.marquee-section{padding-top:160px}}
+.marquee-row{display:flex;gap:12px;will-change:transform;margin-bottom:12px}
+.marquee-tile{width:420px;height:270px;border-radius:16px;object-fit:cover;flex-shrink:0}
+.about{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 20px;position:relative;overflow:hidden}
+.about-deco{position:absolute;z-index:0;pointer-events:none;opacity:0.3}
+.about-heading{font-weight:900;text-transform:uppercase;letter-spacing:-0.025em;line-height:0.9;text-align:center;font-size:clamp(3rem,12vw,160px)}
+.about-text{color:#D7E2EA;font-weight:500;text-align:center;line-height:1.6;max-width:560px;font-size:clamp(1rem,2vw,1.35rem);position:relative;z-index:5}
+.about-text .char{display:inline-block;opacity:0.2;transition:opacity 0.3s ease}
+.about-text .char.lit{opacity:1}
+.about-content{display:flex;flex-direction:column;align-items:center;gap:40px;position:relative;z-index:5}
+@media(min-width:640px){.about-content{gap:56px}}
+@media(min-width:768px){.about-content{gap:64px}}
+.services{background:#FFFFFF;border-radius:40px 40px 0 0;padding:80px 20px;position:relative;z-index:2}
+@media(min-width:640px){.services{border-radius:50px 50px 0 0;padding:96px 32px}}
+@media(min-width:768px){.services{border-radius:60px 60px 0 0;padding:128px 40px}}
+.services-heading{color:#0C0C0C;font-weight:900;text-transform:uppercase;text-align:center;font-size:clamp(3rem,12vw,160px);line-height:0.9;margin-bottom:64px}
+@media(min-width:640px){.services-heading{margin-bottom:80px}}
+@media(min-width:768px){.services-heading{margin-bottom:112px}}
+.services-list{max-width:64rem;margin:0 auto}
+.service-item{display:flex;gap:20px;align-items:flex-start;padding:32px 0;border-bottom:1px solid rgba(12,12,12,0.15)}
+@media(min-width:640px){.service-item{padding:40px 0}}
+@media(min-width:768px){.service-item{padding:48px 0}}
+.service-num{font-weight:900;font-size:clamp(3rem,10vw,140px);color:#0C0C0C;line-height:0.9;flex-shrink:0}
+.service-content{display:flex;flex-direction:column;gap:8px;padding-top:8px}
+.service-name{font-weight:500;text-transform:uppercase;font-size:clamp(1rem,2.2vw,2.1rem);color:#0C0C0C}
+.service-desc{font-weight:300;line-height:1.6;max-width:42rem;font-size:clamp(0.85rem,1.6vw,1.25rem);color:#0C0C0C;opacity:0.6}
+.projects{background:#0C0C0C;border-radius:40px 40px 0 0;margin-top:-40px;z-index:10;position:relative;padding:80px 0 40px}
+@media(min-width:640px){.projects{border-radius:50px 50px 0 0;margin-top:-48px}}
+@media(min-width:768px){.projects{border-radius:60px 60px 0 0;margin-top:-56px}}
+.projects-heading{font-weight:900;text-transform:uppercase;letter-spacing:-0.025em;line-height:0.9;text-align:center;font-size:clamp(3rem,12vw,160px);padding:0 20px;margin-bottom:48px}
+.video-card{max-width:580px;margin:0 auto 20px;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.07);border-radius:18px;overflow:hidden;backdrop-filter:blur(12px);transition:all 0.45s cubic-bezier(0.34,1.56,0.64,1)}
+.video-card:hover{border-color:rgba(0,212,255,0.2);box-shadow:0 18px 50px rgba(0,212,255,0.08);transform:translateY(-3px)}
+.video-thumb-wrap{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#0a0612}
+.video-thumb-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.video-card:hover .video-thumb-wrap img{transform:scale(1.06)}
+.video-thumb-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.1),rgba(0,0,0,0.5))}
+.play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;background:rgba(0,0,0,0.6);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;border:2px solid rgba(255,255,255,0.2);transition:all 0.35s}
+.play-btn svg{width:22px;height:22px;fill:#fff;margin-left:3px}
+.video-card:hover .play-btn{background:rgba(255,0,0,0.9);border-color:rgba(255,0,0,0.5);transform:translate(-50%,-50%) scale(1.15);box-shadow:0 0 30px rgba(255,0,0,0.5)}
+.badge-new{position:absolute;top:10px;left:10px;z-index:3;display:inline-flex;align-items:center;gap:4px;font-size:0.58rem;padding:4px 9px;border-radius:7px;background:linear-gradient(135deg,#ff6b1a,#ffb800);color:#fff;font-weight:700;text-transform:uppercase;animation:badgePulse 2s infinite}
+@keyframes badgePulse{0%,100%{opacity:1;box-shadow:0 0 10px rgba(255,107,26,0.5)}50%{opacity:0.85;box-shadow:0 0 18px rgba(255,107,26,0.7)}}
+.video-info{padding:14px 16px 10px}
+.video-title-row{display:flex;justify-content:space-between;gap:8px}
+.video-title{font-size:0.88rem;font-weight:600;flex:1;color:#D7E2EA}
+.video-ext-link{color:#7a7a92;transition:all 0.3s;flex-shrink:0}
+.video-ext-link svg{width:15px;height:15px;fill:currentColor}
+.video-card:hover .video-ext-link{color:#00d4ff;transform:translate(2px,-2px)}
+.video-meta{font-size:0.68rem;color:#7a7a92;margin-top:5px;display:flex;gap:6px}
+.resources-btn{display:flex;align-items:center;justify-content:space-between;width:100%;padding:10px 16px;background:rgba(0,229,204,0.04);border-top:1px solid rgba(255,255,255,0.04);border:none;color:#00e5cc;font-size:0.72rem;font-weight:600;cursor:pointer;font-family:inherit;transition:background 0.3s;text-align:left}
+.resources-btn:hover{background:rgba(0,229,204,0.08)}
+.resources-btn svg{width:14px;height:14px;fill:currentColor}
+.resources-btn .chev{transition:transform 0.3s}
+.resources-btn.expanded .chev{transform:rotate(180deg)}
+.resources-content{max-height:0;overflow:hidden;transition:max-height 0.4s;padding:0 16px}
+.resources-content.expanded{max-height:2000px;padding:0 16px 14px}
+.resource-placeholder{font-size:0.68rem;color:#7a7a92;font-style:italic;padding:8px 0}
+.prompt-card{background:rgba(0,0,0,0.3);border:1px solid rgba(0,229,204,0.12);border-radius:11px;padding:12px;margin-top:10px}
+.prompt-card:first-child{margin-top:0}
+.prompt-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.prompt-label{display:flex;align-items:center;gap:6px;font-size:0.7rem;font-weight:700;color:#00e5cc}
+.prompt-label svg{width:13px;height:13px;fill:#00e5cc}
+.copy-btn{font-size:0.62rem;padding:4px 10px;border-radius:7px;background:rgba(0,229,204,0.1);border:1px solid rgba(0,229,204,0.2);color:#00e5cc;cursor:pointer;font-family:inherit;font-weight:600;transition:all 0.3s}
+.copy-btn:hover{background:rgba(0,229,204,0.2);transform:scale(1.05)}
+.copy-btn.copied{background:rgba(0,229,204,0.3);color:#fff}
+.prompt-text{font-size:0.73rem;line-height:1.55;color:#d0d0e0;white-space:pre-wrap;word-break:break-word}
+.contact-section{background:#0C0C0C;padding:40px 20px 60px}
+.contact-form-wrap{max-width:580px;margin:0 auto;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:18px;backdrop-filter:blur(12px)}
+.tabs{display:flex;gap:7px;margin-bottom:12px}
+.tab-btn{flex:1;padding:9px;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.07);border-radius:11px;color:#d0d0e0;font-size:0.75rem;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:5px;transition:all 0.3s}
+.tab-btn svg{width:14px;height:14px;fill:currentColor}
+.tab-btn.active{background:rgba(0,212,255,0.08);border-color:rgba(0,212,255,0.3);color:#00d4ff}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.form-group{margin-bottom:12px}
+.form-group label{display:block;font-size:0.7rem;font-weight:600;color:#d0d0e0;margin-bottom:5px}
+.form-input,.form-textarea{width:100%;padding:11px 13px;background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.07);border-radius:11px;color:#f5f5fa;font-size:0.85rem;font-family:inherit;outline:none;transition:all 0.3s}
+.form-input:focus,.form-textarea:focus{border-color:rgba(0,212,255,0.4);box-shadow:0 0 20px rgba(0,212,255,0.1)}
+.form-textarea{min-height:75px;resize:vertical}
+.form-btn{width:100%;padding:12px;background:linear-gradient(123deg,#18011F 7%,#B600A8 37%,#7621B0 72%,#BE4C00 100%);border:none;border-radius:12px;color:#fff;font-size:0.85rem;font-weight:700;letter-spacing:1.5px;cursor:pointer;font-family:inherit;text-transform:uppercase;outline:2px solid rgba(255,255,255,0.5);outline-offset:-3px;transition:transform 0.3s}
+.form-btn:hover{transform:translateY(-2px) scale(1.01)}
+.footer{text-align:center;padding:30px 20px;border-top:1px solid rgba(255,255,255,0.05)}
+.footer p{font-size:0.7rem;color:#7a7a92;line-height:1.6}
+.footer .heart{color:#ff6b1a}
+.socials{display:flex;justify-content:center;gap:10px;margin-bottom:20px}
+.social-icon{width:42px;height:42px;border-radius:13px;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1)}
+.social-icon svg{width:18px;height:18px;fill:#d0d0e0;transition:all 0.3s}
+.social-icon:hover{transform:translateY(-5px) scale(1.12)}
+.social-icon:nth-child(1):hover{border-color:rgba(255,0,0,0.4);background:rgba(255,0,0,0.08);box-shadow:0 10px 30px rgba(255,0,0,0.2)}.social-icon:nth-child(1):hover svg{fill:#ff0000}
+.social-icon:nth-child(2):hover{border-color:rgba(255,107,26,0.4);background:rgba(255,107,26,0.08)}.social-icon:nth-child(2):hover svg{fill:#ff6b1a}
+.social-icon:nth-child(3):hover{border-color:rgba(110,139,255,0.4);background:rgba(110,139,255,0.08)}.social-icon:nth-child(3):hover svg{fill:#6e8bff}
+@media(max-width:480px){.hero h1{font-size:15vw}}
+</style>
 </head>
 <body>
-    <div class="bg-layer bg-glow"></div>
-    <div class="bg-layer bg-grid"></div>
-    <div class="bg-layer bg-orb orb1"></div>
-    <div class="bg-layer bg-orb orb2"></div>
-    <div class="bg-layer bg-orb orb3"></div>
-
-    <div class="container">
-        <div class="hero">
-            <img src="https://res.cloudinary.com/acqrwkcn/image/upload/v1788937314/file_000000009b548211bd6483b2dd13d99d.png" alt="MR. VICKY Banner" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#1a0a2e,#16213e,#0f3460)';">
-        </div>
-
-        <div class="profile-wrap">
-            <div class="profile-ring"></div>
-            <div class="profile">
-                <img src="https://res.cloudinary.com/acqrwkcn/image/upload/v1788937188/1000124621.png" alt="MR. VICKY">
-            </div>
-        </div>
-
-        <div class="header">
-            <h1 class="channel-name">MR. VICKY</h1>
-            <p class="tagline">LEARN <span class="hl">GROW</span> SUCCEED</p>
-            <p class="subtitle">Simple Ideas • Real Strategies • A Better You</p>
-        </div>
-
-        <div class="socials">
-            <a href="https://youtube.com/@mrvicky-0.1" target="_blank" class="social-icon" title="YouTube">
-                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            </a>
-            <a href="https://www.instagram.com/vikramnegi_official" target="_blank" class="social-icon" title="Instagram">
-                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-            </a>
-            <a href="mailto:mrvickybusines@gmail.com" class="social-icon" title="Email">
-                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            </a>
-        </div>
-
-        <!-- Videos -->
-        <div class="section-title" style="animation-delay:0.2s">
-            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            Watch My Videos
-        </div>
-
-        <!-- Video 1: Motion Designers (with resources) -->
-        <div class="video-card">
-            <a href="https://www.youtube.com/watch?v=9RzWDVzXGi0" target="_blank" style="text-decoration:none;color:inherit;">
-                <div class="video-thumb-wrap">
-                    <span class="badge-new">
-                        <svg viewBox="0 0 24 24" style="width:9px;height:9px;fill:currentColor;"><path d="M12 2l2.39 7.36H22l-6.18 4.49L18.21 21 12 16.51 5.79 21l2.39-7.15L2 9.36h7.61z"/></svg>
-                        NEW
-                    </span>
-                    <img src="https://i.ytimg.com/vi/9RzWDVzXGi0/hqdefault.jpg" alt="Motion Designers" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0e0a1a,#1a0a2e)';">
-                    <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-                </div>
-                <div class="video-info">
-                    <div class="video-title-row">
-                        <div class="video-title">Motion Designers Will HATE This Video...</div>
-                        <div class="video-ext-link"><svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg></div>
-                    </div>
-                    <div class="video-meta"><span>9:27</span><span>•</span><span>8 views</span><span>•</span><span>3 hours ago</span></div>
-                </div>
-            </a>
-            <button class="resources-btn" onclick="toggleResources(this, 'res1')">
-                <div class="resources-btn-left">
-                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
-                    Video resources
-                </div>
-                <div class="chev"><svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
-            </button>
-            <div class="resources-content" id="res1">
-                <div class="prompt-card">
-                    <div class="prompt-header">
-                        <div class="prompt-label">
-                            <svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-                            Prompt 1: Video Analysis Prompt
-                        </div>
-                        <button class="copy-btn" onclick="copyPrompt(this, 'prompt1')">Copy</button>
-                    </div>
-                    <div class="prompt-text" id="prompt1">Analyze this video scene by scene and generate detailed Ai video prompt for each shot/frame including camera angles, subject actions, lighting, environment, facial expressions, composition, transitions and cinematic style. Make the prompts accurate enough to recreate the video as close as possible. Make sure to include the exact texts in the video into the prompt.</div>
-                </div>
-                <div class="prompt-card">
-                    <div class="prompt-header">
-                        <div class="prompt-label">
-                            <svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-                            Prompt 2: Audio & Negative Prompt
-                        </div>
-                        <button class="copy-btn" onclick="copyPrompt(this, 'prompt2')">Copy</button>
-                    </div>
-                    <div class="prompt-text" id="prompt2">Use Professional sound effect design.
-Negative prompts: Do not include voice-over, Speech, or background music in the video. (If it has voice-over, speech, or background music, do not generate.)</div>
-                </div>
-                <div class="prompt-card">
-                    <div class="prompt-header">
-                        <div class="prompt-label">
-                            <svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-                            Prompt 3: Script Adaptation
-                        </div>
-                        <button class="copy-btn" onclick="copyPrompt(this, 'prompt3')">Copy</button>
-                    </div>
-                    <div class="prompt-text" id="prompt3">I want you to repurpose the video animation. I want you to change the 3D assets and elements in the animation and use assets and elements that suit and are relevant to this new narration script: ["AI isn't coming - it's already here, reshaping how we work, create, and think. Every industry is shifting. Every skill is evolving. Think about the best professionals; they adapt constantly and grow with the tools. Those who adapt will lead; those who resist will struggle to keep up. This isn't about replacing humans - it's about amplifying what we can do. The future favors the adaptable. Start now."].</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Video 2: BILIBILI -->
-        <div class="video-card">
-            <a href="https://www.youtube.com/watch?v=P66FuHv69wg" target="_blank" style="text-decoration:none;color:inherit;">
-                <div class="video-thumb-wrap">
-                    <img src="https://i.ytimg.com/vi/P66FuHv69wg/hqdefault.jpg" alt="BILIBILI" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0e0a1a,#1a0a2e)';">
-                    <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-                </div>
-                <div class="video-info">
-                    <div class="video-title-row">
-                        <div class="video-title">I Tried BILIBILI app for earning Money</div>
-                        <div class="video-ext-link"><svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg></div>
-                    </div>
-                    <div class="video-meta"><span>6:26</span><span>•</span><span>120 views</span><span>•</span><span>3 days ago</span></div>
-                </div>
-            </a>
-            <button class="resources-btn" onclick="toggleResources(this, 'res2')">
-                <div class="resources-btn-left">
-                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
-                    Video resources
-                </div>
-                <div class="chev"><svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
-            </button>
-            <div class="resources-content" id="res2">
-                <div class="resource-placeholder">Add links, tools or notes.</div>
-            </div>
-        </div>
-
-        <!-- Video 3: Meesho -->
-        <div class="video-card">
-            <a href="https://www.youtube.com/watch?v=6b3WhkzwP-o" target="_blank" style="text-decoration:none;color:inherit;">
-                <div class="video-thumb-wrap">
-                    <img src="https://i.ytimg.com/vi/6b3WhkzwP-o/hqdefault.jpg" alt="Meesho Affiliate" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0e0a1a,#1a0a2e)';">
-                    <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-                </div>
-                <div class="video-info">
-                    <div class="video-title-row">
-                        <div class="video-title">How to earn ₹5000 per WEEK with Meesho Affiliate</div>
-                        <div class="video-ext-link"><svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg></div>
-                    </div>
-                    <div class="video-meta"><span>14:41</span><span>•</span><span>5.3K views</span><span>•</span><span>6 days ago</span></div>
-                </div>
-            </a>
-            <button class="resources-btn" onclick="toggleResources(this, 'res3')">
-                <div class="resources-btn-left">
-                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
-                    Video resources
-                </div>
-                <div class="chev"><svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
-            </button>
-            <div class="resources-content" id="res3">
-                <div class="resource-placeholder">Add links, tools or notes.</div>
-            </div>
-        </div>
-
-        <!-- Video 4: SELF-EDUCATED -->
-        <div class="video-card">
-            <a href="https://www.youtube.com/watch?v=tI3PHQt16xw" target="_blank" style="text-decoration:none;color:inherit;">
-                <div class="video-thumb-wrap">
-                    <img src="https://i.ytimg.com/vi/tI3PHQt16xw/hqdefault.jpg" alt="Self-Educated" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0e0a1a,#1a0a2e)';">
-                    <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-                </div>
-                <div class="video-info">
-                    <div class="video-title-row">
-                        <div class="video-title">Dangerously become a SELF-EDUCATED</div>
-                        <div class="video-ext-link"><svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg></div>
-                    </div>
-                    <div class="video-meta"><span>5:53</span><span>•</span><span>9 views</span><span>•</span><span>11 days ago</span></div>
-                </div>
-            </a>
-            <button class="resources-btn" onclick="toggleResources(this, 'res4')">
-                <div class="resources-btn-left">
-                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
-                    Video resources
-                </div>
-                <div class="chev"><svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
-            </button>
-            <div class="resources-content" id="res4">
-                <div class="resource-placeholder">Add links, tools or notes.</div>
-            </div>
-        </div>
-
-        <!-- Contact -->
-        <div class="section-title" style="animation-delay:0.3s">
-            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            Get in Touch
-        </div>
-
-        <div class="form-card">
-            <div class="tabs">
-                <button class="tab-btn active" onclick="switchTab('contact',this)">
-                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    Contact
-                </button>
-                <button class="tab-btn" onclick="switchTab('message',this)">
-                    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
-                    Quick Message
-                </button>
-            </div>
-            <div class="tab-content active" id="tab-contact">
-                <form action="https://formsubmit.co/mrvickybusines@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="New Contact — MR. VICKY Website">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://vikramnegi99.github.io/mr-vicky/">
-                    <div class="form-group"><label>Your Name</label><input type="text" name="name" class="form-input" placeholder="Enter your name" required></div>
-                    <div class="form-group"><label>Your Email</label><input type="email" name="email" class="form-input" placeholder="your@email.com" required></div>
-                    <div class="form-group"><label>Subject</label><input type="text" name="subject" class="form-input" placeholder="What's this about?" required></div>
-                    <div class="form-group"><label>Message</label><textarea name="message" class="form-textarea" placeholder="Write your message here..." required></textarea></div>
-                    <button type="submit" class="form-btn">Send Message</button>
-                </form>
-            </div>
-            <div class="tab-content" id="tab-message">
-                <form action="https://formsubmit.co/mrvickybusines@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="New Quick Message — MR. VICKY Website">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://vikramnegi99.github.io/mr-vicky/">
-                    <div class="form-group"><label>Your Name</label><input type="text" name="name" class="form-input" placeholder="Your name" required></div>
-                    <div class="form-group"><label>Quick Message</label><textarea name="message" class="form-textarea" placeholder="Type a quick message..." required></textarea></div>
-                    <button type="submit" class="form-btn">Send</button>
-                </form>
-            </div>
-        </div>
-
-        <div class="footer">
-            <p>© 2026 MR. VICKY — Learn Grow Succeed</p>
-            <p>Made with <span class="heart">♥</span> for our community</p>
-        </div>
+<section class="hero">
+  <nav class="navbar fade-in" style="transition-delay:0s">
+    <a href="#about" class="nav-link">About</a>
+    <a href="#services" class="nav-link">Videos</a>
+    <a href="#projects" class="nav-link">Resources</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+  <div class="hero-portrait fade-in" style="transition-delay:0.6s;transform:translateY(30px)">
+    <img src="https://res.cloudinary.com/acqrwkcn/image/upload/v1788937188/1000124621.png" alt="MR. VICKY" onerror="this.style.display='none'">
+  </div>
+  <div class="hero-heading-wrap fade-in" style="transition-delay:0.15s;transform:translateY(40px)">
+    <h1 class="hero-heading">MR. VICKY</h1>
+  </div>
+  <div class="hero-bottom">
+    <p class="hero-text-left fade-in" style="transition-delay:0.35s;transform:translateY(20px)">a creator driven by money earning, finance & building websites</p>
+    <a href="#contact" class="contact-btn fade-in" style="transition-delay:0.5s;transform:translateY(20px)">Contact Me</a>
+  </div>
+</section>
+<section class="marquee-section">
+  <div class="marquee-row" id="marquee-row-1"></div>
+  <div class="marquee-row" id="marquee-row-2"></div>
+</section>
+<section class="about" id="about">
+  <div class="about-deco" style="top:4%;left:2%;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,255,0.15),transparent 70%)"></div>
+  <div class="about-deco" style="bottom:8%;left:6%;width:100px;height:100px;border-radius:30%;background:radial-gradient(circle,rgba(255,107,26,0.12),transparent 70%)"></div>
+  <div class="about-deco" style="top:4%;right:2%;width:120px;height:120px;border-radius:20px;background:radial-gradient(circle,rgba(110,139,255,0.12),transparent 70%)"></div>
+  <div class="about-deco" style="bottom:8%;right:6%;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,rgba(255,184,0,0.1),transparent 70%)"></div>
+  <div class="about-content">
+    <h2 class="hero-heading about-heading fade-in">ABOUT ME</h2>
+    <p class="about-text" id="about-text">With more than five years of experience in content creation, i focus on money earning strategies, finance, website building, and discovering new tools. i truly enjoy working with ideas that aim to stand out and help people grow. Let's build something incredible together!</p>
+    <a href="#contact" class="contact-btn fade-in" style="transition-delay:0.2s">Contact Me</a>
+  </div>
+</section>
+<section class="services" id="services">
+  <h2 class="services-heading fade-in">VIDEOS</h2>
+  <div class="services-list">
+    <div class="service-item fade-in" style="transition-delay:0s"><span class="service-num">01</span><div class="service-content"><span class="service-name">Motion Designers Will HATE This Video</span><p class="service-desc">AI is reshaping how we create motion graphics. This video explores how tools like Claude Code and HyperFrames are changing the game for motion designers. 9:27 • 8 views • NEW</p></div></div>
+    <div class="service-item fade-in" style="transition-delay:0.1s"><span class="service-num">02</span><div class="service-content"><span class="service-name">I Tried BILIBILI App for Earning Money</span><p class="service-desc">Exploring the Bilibili app as a platform for earning money online. A detailed review of how it works and whether it's worth your time. 6:26 • 120 views</p></div></div>
+    <div class="service-item fade-in" style="transition-delay:0.2s"><span class="service-num">03</span><div class="service-content"><span class="service-name">How to Earn ₹5000 Per Week with Meesho Affiliate</span><p class="service-desc">A complete beginner's guide to earning money through the Meesho Affiliate Program with zero investment. Step-by-step process explained in Hindi. 14:41 • 5.3K views</p></div></div>
+    <div class="service-item fade-in" style="transition-delay:0.3s"><span class="service-num">04</span><div class="service-content"><span class="service-name">Dangerously Become a SELF-EDUCATED</span><p class="service-desc">The power of self-education and how it can transform your life. Discipline is permanent motivation. Learn why self-taught skills matter more than ever. 5:53 • 9 views</p></div></div>
+    <div class="service-item fade-in" style="transition-delay:0.4s"><span class="service-num">05</span><div class="service-content"><span class="service-name">Channel Vision</span><p class="service-desc">MR. VICKY is about simple ideas, real strategies, and a better you. Subscribe to join a growing community of learners and earners. New videos every week on money, finance, tools, and website building.</p></div></div>
+  </div>
+</section>
+<section class="projects" id="projects">
+  <h2 class="hero-heading projects-heading fade-in">WATCH</h2>
+  <div class="video-card fade-in" style="margin-bottom:14px">
+    <a href="https://www.youtube.com/watch?v=9RzWDVzXGi0" target="_blank" style="text-decoration:none;color:inherit">
+      <div class="video-thumb-wrap"><span class="badge-new">NEW</span><img src="https://i.ytimg.com/vi/9RzWDVzXGi0/hqdefault.jpg" alt="Motion Designers" onerror="this.style.display='none'"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="video-info"><div class="video-title-row"><div class="video-title">Motion Designers Will HATE This Video...</div><div class="video-ext-link"><svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg></div></div><div class="video-meta"><span>9:27</span><span>•</span><span>8 views</span><span>•</span><span>3 hours ago</span></div></div>
+    </a>
+    <button class="resources-btn" onclick="toggleResources(this,'res1')"><span style="display:flex;align-items:center;gap:6px"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg> Video resources</span><span class="chev"><svg viewBox="0 0 24 24" style="width:12px;height:12px"><path fill="#00e5cc" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></span></button>
+    <div class="resources-content" id="res1">
+      <div class="prompt-card"><div class="prompt-header"><div class="prompt-label"><svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> Prompt 1: Video Analysis Prompt</div><button class="copy-btn" onclick="copyPrompt(this,'prompt1')">Copy</button></div><div class="prompt-text" id="prompt1">Analyze this video scene by scene and generate detailed Ai video prompt for each shot/frame including camera angles, subject actions, lighting, environment, facial expressions, composition, transitions and cinematic style. Make the prompts accurate enough to recreate the video as close as possible. Make sure to include the exact texts in the video into the prompt.</div></div>
+      <div class="prompt-card"><div class="prompt-header"><div class="prompt-label"><svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> Prompt 2: Audio & Negative Prompt</div><button class="copy-btn" onclick="copyPrompt(this,'prompt2')">Copy</button></div><div class="prompt-text" id="prompt2">Use Professional sound effect design.\nNegative prompts: Do not include voice-over, Speech, or background music in the video. (If it has voice-over, speech, or background music, do not generate.)</div></div>
+      <div class="prompt-card"><div class="prompt-header"><div class="prompt-label"><svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> Prompt 3: Script Adaptation</div><button class="copy-btn" onclick="copyPrompt(this,'prompt3')">Copy</button></div><div class="prompt-text" id="prompt3">I want you to repurpose the video animation. I want you to change the 3D assets and elements in the animation and use assets and elements that suit and are relevant to this new narration script: ["AI isn't coming - it's already here, reshaping how we work, create, and think. Every industry is shifting. Every skill is evolving. Think about the best professionals; they adapt constantly and grow with the tools. Those who adapt will lead; those who resist will struggle to keep up. This isn't about replacing humans - it's about amplifying what we can do. The future favors the adaptable. Start now."].</div></div>
     </div>
-    <script>
-        function switchTab(t,b){document.querySelectorAll('.tab-btn').forEach(function(x){x.classList.remove('active')});document.querySelectorAll('.tab-content').forEach(function(x){x.classList.remove('active')});b.classList.add('active');document.getElementById('tab-'+t).classList.add('active')}
-        function toggleResources(btn,id){var c=document.getElementById(id);if(c.classList.contains('expanded')){c.classList.remove('expanded');btn.classList.remove('expanded')}else{c.classList.add('expanded');btn.classList.add('expanded')}}
-        function copyPrompt(btn,id){var t=document.getElementById(id).innerText;navigator.clipboard.writeText(t).then(function(){btn.innerText='Copied!';btn.classList.add('copied');setTimeout(function(){btn.innerText='Copy';btn.classList.remove('copied')},2000)})}
-    </script>
+  </div>
+  <div class="video-card fade-in" style="margin-bottom:14px">
+    <a href="https://www.youtube.com/watch?v=P66FuHv69wg" target="_blank" style="text-decoration:none;color:inherit">
+      <div class="video-thumb-wrap"><img src="https://i.ytimg.com/vi/P66FuHv69wg/hqdefault.jpg" alt="BILIBILI" onerror="this.style.display='none'"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="video-info"><div class="video-title-row"><div class="video-title">I Tried BILIBILI app for earning Money</div><div class="video-ext-link"><svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg></div></div><div class="video-meta"><span>6:26</span><span>•</span><span>120 views</span><span>•</span><span>3 days ago</span></div></div>
+    </a>
+    <button class="resources-btn" onclick="toggleResources(this,'res2')"><span style="display:flex;align-items:center;gap:6px"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg> Video resources</span><span class="chev"><svg viewBox="0 0 24 24" style="width:12px;height:12px"><path fill="#00e5cc" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></span></button>
+    <div class="resources-content" id="res2"><div class="resource-placeholder">Add links, tools or notes.</div></div>
+  </div>
+  <div class="video-card fade-in" style="margin-bottom:14px">
+    <a href="https://www.youtube.com/watch?v=6b3WhkzwP-o" target="_blank" style="text-decoration:none;color:inherit">
+      <div class="video-thumb-wrap"><img src="https://i.ytimg.com/vi/6b3WhkzwP-o/hqdefault.jpg" alt="Meesho" onerror="this.style.display='none'"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="video-info"><div class="video-title-row"><div class="video-title">How to earn ₹5000 per WEEK with Meesho Affiliate</div><div class="video-ext-link"><svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg></div></div><div class="video-meta"><span>14:41</span><span>•</span><span>5.3K views</span><span>•</span><span>6 days ago</span></div></div>
+    </a>
+    <button class="resources-btn" onclick="toggleResources(this,'res3')"><span style="display:flex;align-items:center;gap:6px"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg> Video resources</span><span class="chev"><svg viewBox="0 0 24 24" style="width:12px;height:12px"><path fill="#00e5cc" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></span></button>
+    <div class="resources-content" id="res3"><div class="resource-placeholder">Add links, tools or notes.</div></div>
+  </div>
+  <div class="video-card fade-in" style="margin-bottom:14px">
+    <a href="https://www.youtube.com/watch?v=tI3PHQt16xw" target="_blank" style="text-decoration:none;color:inherit">
+      <div class="video-thumb-wrap"><img src="https://i.ytimg.com/vi/tI3PHQt16xw/hqdefault.jpg" alt="Self-Educated" onerror="this.style.display='none'"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="video-info"><div class="video-title-row"><div class="video-title">Dangerously become a SELF-EDUCATED</div><div class="video-ext-link"><svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg></div></div><div class="video-meta"><span>5:53</span><span>•</span><span>9 views</span><span>•</span><span>11 days ago</span></div></div>
+    </a>
+    <button class="resources-btn" onclick="toggleResources(this,'res4')"><span style="display:flex;align-items:center;gap:6px"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg> Video resources</span><span class="chev"><svg viewBox="0 0 24 24" style="width:12px;height:12px"><path fill="#00e5cc" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></span></button>
+    <div class="resources-content" id="res4"><div class="resource-placeholder">Add links, tools or notes.</div></div>
+  </div>
+</section>
+<section class="contact-section" id="contact">
+  <div class="socials">
+    <a href="https://youtube.com/@mrvicky-0.1" target="_blank" class="social-icon" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a href="https://www.instagram.com/vikramnegi_official" target="_blank" class="social-icon" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+    <a href="mailto:mrvickybusines@gmail.com" class="social-icon" title="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+  </div>
+  <div class="contact-form-wrap">
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('contact',this)"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> Contact</button>
+      <button class="tab-btn" onclick="switchTab('message',this)"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg> Quick Message</button>
+    </div>
+    <div class="tab-content active" id="tab-contact">
+      <form action="https://formsubmit.co/mrvickybusines@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Contact — MR. VICKY Website"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="https://vikramnegi99.github.io/mr-vicky/">
+        <div class="form-group"><label>Your Name</label><input type="text" name="name" class="form-input" placeholder="Enter your name" required></div>
+        <div class="form-group"><label>Your Email</label><input type="email" name="email" class="form-input" placeholder="your@email.com" required></div>
+        <div class="form-group"><label>Subject</label><input type="text" name="subject" class="form-input" placeholder="What's this about?" required></div>
+        <div class="form-group"><label>Message</label><textarea name="message" class="form-textarea" placeholder="Write your message here..." required></textarea></div>
+        <button type="submit" class="form-btn">Send Message</button>
+      </form>
+    </div>
+    <div class="tab-content" id="tab-message">
+      <form action="https://formsubmit.co/mrvickybusines@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Quick Message — MR. VICKY Website"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="https://vikramnegi99.github.io/mr-vicky/">
+        <div class="form-group"><label>Your Name</label><input type="text" name="name" class="form-input" placeholder="Your name" required></div>
+        <div class="form-group"><label>Quick Message</label><textarea name="message" class="form-textarea" placeholder="Type a quick message..." required></textarea></div>
+        <button type="submit" class="form-btn">Send</button>
+      </form>
+    </div>
+  </div>
+</section>
+<div class="footer"><p>© 2026 MR. VICKY — Learn Grow Succeed</p><p>Made with <span class="heart">♥</span> for our community</p></div>
+<script>
+var fadeObserver=new IntersectionObserver(function(e){e.forEach(function(t){if(t.isIntersecting)t.target.classList.add('visible')})},{threshold:0.05,rootMargin:'50px'});
+document.querySelectorAll('.fade-in').forEach(function(e){fadeObserver.observe(e)});
+var aboutText=document.getElementById('about-text');
+if(aboutText){var txt=aboutText.textContent;aboutText.innerHTML='';for(var i=0;i<txt.length;i++){var s=document.createElement('span');s.className='char';s.textContent=txt[i]===' '?'\u00A0':txt[i];aboutText.appendChild(s)}var chars=aboutText.querySelectorAll('.char');var to=new IntersectionObserver(function(e){e.forEach(function(t){if(t.isIntersecting)chars.forEach(function(c,i){setTimeout(function(){c.classList.add('lit')},i*20)})})},{threshold:0.1});to.observe(aboutText)}
+var thumbs=['https://i.ytimg.com/vi/9RzWDVzXGi0/hqdefault.jpg','https://i.ytimg.com/vi/P66FuHv69wg/hqdefault.jpg','https://i.ytimg.com/vi/6b3WhkzwP-o/hqdefault.jpg','https://i.ytimg.com/vi/tI3PHQt16xw/hqdefault.jpg','https://res.cloudinary.com/acqrwkcn/image/upload/v1788937314/file_000000009b548211bd6483b2dd13d99d.png','https://res.cloudinary.com/acqrwkcn/image/upload/v1788937188/1000124621.png'];
+var r1=document.getElementById('marquee-row-1'),r2=document.getElementById('marquee-row-2');
+function buildRow(r,imgs){var a=imgs.concat(imgs,imgs);a.forEach(function(s){var i=document.createElement('img');i.src=s;i.className='marquee-tile';i.loading='lazy';r.appendChild(i)})}
+buildRow(r1,thumbs.slice(0,4));buildRow(r2,thumbs.slice(2));
+var ms=document.querySelector('.marquee-section');
+window.addEventListener('scroll',function(){if(!ms)return;var o=(window.scrollY-ms.offsetTop+window.innerHeight)*0.3;if(r1)r1.style.transform='translateX('+(o-200)+'px)';if(r2)r2.style.transform='translateX('+(-(o-200))+'px)'},{passive:true});
+function switchTab(t,b){document.querySelectorAll('.tab-btn').forEach(function(x){x.classList.remove('active')});document.querySelectorAll('.tab-content').forEach(function(x){x.classList.remove('active')});b.classList.add('active');document.getElementById('tab-'+t).classList.add('active')}
+function toggleResources(b,id){var c=document.getElementById(id);if(c.classList.contains('expanded')){c.classList.remove('expanded');b.classList.remove('expanded')}else{c.classList.add('expanded');b.classList.add('expanded')}}
+function copyPrompt(b,id){var t=document.getElementById(id).innerText;navigator.clipboard.writeText(t).then(function(){b.innerText='Copied!';b.classList.add('copied');setTimeout(function(){b.innerText='Copy';b.classList.remove('copied')},2000)})}
+</script>
 </body>
 </html>
