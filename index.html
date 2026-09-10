@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>MR. VICKY — Learn Grow Succeed</title>
 <meta name="description" content="MR. VICKY — Money Earning, Finance, Website Building & New Tools. Learn Grow Succeed.">
+<meta property="og:title" content="MR. VICKY — Learn Grow Succeed">
+<meta property="og:description" content="Money Earning, Finance, Website Building & New Tools.">
+<meta property="og:image" content="https://res.cloudinary.com/acqrwkcn/image/upload/v1788937314/file_000000009b548211bd6483b2dd13d99d.png">
+<meta property="og:type" content="website">
 <link rel="icon" href="https://res.cloudinary.com/acqrwkcn/image/upload/v1788937188/1000124621.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,133 +19,154 @@ html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overfl
 .hero-heading{background:linear-gradient(180deg,#646973 0%,#BBCCD7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .fade-in{opacity:0;transform:translateY(30px);transition:opacity 0.7s cubic-bezier(0.25,0.1,0.25,1),transform 0.7s cubic-bezier(0.25,0.1,0.25,1)}
 .fade-in.visible{opacity:1;transform:translateY(0)}
-.hero{min-height:100vh;display:flex;flex-direction:column;overflow:hidden;position:relative}
-.navbar{display:flex;justify-content:center;align-items:center;gap:12px;padding:16px 12px 0;flex-wrap:wrap}
-@media(min-width:768px){.navbar{padding:32px 40px 0;justify-content:space-between;gap:0}}
-.nav-link{color:#D7E2EA;font-weight:500;text-transform:uppercase;letter-spacing:0.03em;font-size:0.65rem;transition:opacity 200ms ease;text-decoration:none;white-space:nowrap}
-@media(min-width:480px){.nav-link{font-size:0.75rem;gap:16px}}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:0 16px}
+.navbar{position:absolute;top:0;left:0;width:100%;display:flex;justify-content:center;gap:20px;padding:16px;z-index:30}
+@media(min-width:768px){.navbar{justify-content:space-between;padding:24px 40px}}
+.nav-link{color:#D7E2EA;font-weight:500;text-transform:uppercase;letter-spacing:0.05em;font-size:0.6rem;text-decoration:none;transition:opacity 0.2s;white-space:nowrap}
+@media(min-width:480px){.nav-link{font-size:0.75rem}}
 @media(min-width:768px){.nav-link{font-size:1.125rem}}
 @media(min-width:1024px){.nav-link{font-size:1.4rem}}
-.nav-link:hover{opacity:0.7}
-.hero-heading-wrap{overflow:hidden;margin-top:16px;width:100%;padding:0 8px}
-@media(min-width:640px){.hero-heading-wrap{margin-top:8px}}
-@media(min-width:768px){.hero-heading-wrap{margin-top:-20px}}
-.hero h1{font-weight:900;text-transform:uppercase;letter-spacing:-0.025em;line-height:0.9;width:100%;font-size:12vw;text-align:center}
-@media(min-width:640px){.hero h1{font-size:14vw;white-space:nowrap}}
-@media(min-width:768px){.hero h1{font-size:16vw}}
-@media(min-width:1024px){.hero h1{font-size:17.5vw}}
-.hero-portrait{position:absolute;left:50%;z-index:10;width:180px;top:55%;transform:translate(-50%,-50%)}
-@media(min-width:380px){.hero-portrait{width:220px}}
-@media(min-width:480px){.hero-portrait{width:260px}}
-@media(min-width:640px){.hero-portrait{width:340px;top:auto;transform:translateX(-50%);bottom:0}}
-@media(min-width:768px){.hero-portrait{width:440px}}
-@media(min-width:1024px){.hero-portrait{width:520px}}
-.hero-portrait img{width:100%;max-width:100%;border-radius:20px;object-fit:cover;display:block}
-.hero-bottom{display:flex;flex-direction:column;align-items:center;gap:16px;padding:0 20px 24px;margin-top:auto;position:relative;z-index:20}
-@media(min-width:640px){.hero-bottom{flex-direction:row;justify-content:space-between;align-items:flex-end;padding:0 40px 32px;gap:0}}
-@media(min-width:768px){.hero-bottom{padding:0 40px 40px}}
-.hero-text-left{color:#D7E2EA;font-weight:300;text-transform:uppercase;letter-spacing:0.04em;line-height:1.3;font-size:0.7rem;text-align:center;max-width:280px}
-@media(min-width:640px){.hero-text-left{font-size:clamp(0.75rem,1.4vw,1.5rem);max-width:220px;text-align:left}}
-@media(min-width:768px){.hero-text-left{max-width:260px}}
-.contact-btn{display:inline-flex;align-items:center;justify-content:center;border-radius:9999px;padding:10px 24px;font-size:0.7rem;color:#fff;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;background:linear-gradient(123deg,#18011F 7%,#B600A8 37%,#7621B0 72%,#BE4C00 100%);box-shadow:0 4px 4px rgba(181,1,167,0.25),inset 4px 4px 12px #7721B1;outline:2px solid #fff;outline-offset:-3px;border:none;cursor:pointer;text-decoration:none;transition:transform 0.3s ease,box-shadow 0.3s ease;flex-shrink:0}
-@media(min-width:480px){.contact-btn{padding:12px 32px;font-size:0.75rem}}
-@media(min-width:640px){.contact-btn{padding:14px 40px;font-size:0.875rem}}
+.nav-link:hover{opacity:0.6}
+.hero-content{display:flex;flex-direction:column;align-items:center;gap:20px;width:100%;max-width:600px;text-align:center;z-index:20;padding-top:60px}
+@media(min-width:768px){.hero-content{gap:28px;padding-top:0}}
+.hero-portrait{width:140px;height:140px;border-radius:50%;overflow:hidden;border:3px solid rgba(215,226,234,0.15);flex-shrink:0;box-shadow:0 0 40px rgba(0,212,255,0.15)}
+@media(min-width:480px){.hero-portrait{width:180px;height:180px}}
+@media(min-width:640px){.hero-portrait{width:200px;height:200px}}
+@media(min-width:768px){.hero-portrait{width:220px;height:220px}}
+.hero-portrait img{width:100%;height:100%;object-fit:cover}
+.hero-title{font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;line-height:0.9;font-size:13vw}
+@media(min-width:640px){.hero-title{font-size:14vw}}
+@media(min-width:768px){.hero-title{font-size:15vw}}
+@media(min-width:1024px){.hero-title{font-size:17vw}}
+.hero-tagline{color:#D7E2EA;font-weight:300;text-transform:uppercase;letter-spacing:0.06em;line-height:1.4;font-size:0.7rem;max-width:300px}
+@media(min-width:480px){.hero-tagline{font-size:0.85rem;max-width:400px}}
+@media(min-width:768px){.hero-tagline{font-size:clamp(0.75rem,1.4vw,1.5rem);max-width:500px}}
+.contact-btn{display:inline-flex;align-items:center;justify-content:center;border-radius:9999px;padding:10px 28px;font-size:0.7rem;color:#fff;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;background:linear-gradient(123deg,#18011F 7%,#B600A8 37%,#7621B0 72%,#BE4C00 100%);box-shadow:0 4px 4px rgba(181,1,167,0.25),inset 4px 4px 12px #7721B1;outline:2px solid #fff;outline-offset:-3px;border:none;cursor:pointer;text-decoration:none;transition:transform 0.3s,box-shadow 0.3s;flex-shrink:0}
+@media(min-width:480px){.contact-btn{padding:12px 36px;font-size:0.8rem}}
 @media(min-width:768px){.contact-btn{padding:16px 48px;font-size:1rem}}
 .contact-btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 8px 20px rgba(181,1,167,0.4),inset 4px 4px 12px #7721B1}
-.marquee-section{background:#0C0C0C;padding:96px 0 40px;overflow:hidden}
-@media(min-width:640px){.marquee-section{padding-top:128px}}
-@media(min-width:768px){.marquee-section{padding-top:160px}}
-.marquee-row{display:flex;gap:12px;will-change:transform;margin-bottom:12px}
-.marquee-tile{width:300px;height:190px;border-radius:16px;object-fit:cover;flex-shrink:0}
-@media(min-width:640px){.marquee-tile{width:420px;height:270px}}
-.about{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 20px;position:relative;overflow:hidden}
-.about-deco{position:absolute;z-index:0;pointer-events:none;opacity:0.3}
-.about-heading{font-weight:900;text-transform:uppercase;letter-spacing:-0.025em;line-height:0.9;text-align:center;font-size:clamp(3rem,12vw,160px)}
-.about-text{color:#D7E2EA;font-weight:500;text-align:center;line-height:1.6;max-width:560px;font-size:clamp(1rem,2vw,1.35rem);position:relative;z-index:5}
-.about-text .char{display:inline-block;opacity:0.2;transition:opacity 0.3s ease}
+.marquee-section{background:#0C0C0C;padding:60px 0 40px;overflow:hidden}
+@media(min-width:768px){.marquee-section{padding:100px 0 50px}}
+.marquee-row{display:flex;gap:10px;will-change:transform;margin-bottom:10px}
+.marquee-tile{width:240px;height:150px;border-radius:12px;object-fit:cover;flex-shrink:0}
+@media(min-width:640px){.marquee-tile{width:360px;height:225px;border-radius:16px}}
+@media(min-width:768px){.marquee-tile{width:420px;height:260px}}
+.about{padding:60px 20px;display:flex;flex-direction:column;align-items:center;gap:32px;position:relative;overflow:hidden}
+@media(min-width:768px){.about{padding:100px 40px;gap:48px;min-height:100vh;justify-content:center}}
+.about-heading{font-weight:900;text-transform:uppercase;letter-spacing:-0.025em;line-height:0.9;text-align:center;font-size:clamp(2.5rem,10vw,120px)}
+.about-text{color:#D7E2EA;font-weight:400;text-align:center;line-height:1.6;max-width:560px;font-size:clamp(0.9rem,1.8vw,1.25rem);position:relative;z-index:5}
+.about-text .char{display:inline-block;opacity:0.15;transition:opacity 0.3s ease}
 .about-text .char.lit{opacity:1}
-.about-content{display:flex;flex-direction:column;align-items:center;gap:40px;position:relative;z-index:5}
-@media(min-width:640px){.about-content{gap:56px}}
-@media(min-width:768px){.about-content{gap:64px}}
-.services{background:#FFFFFF;border-radius:40px 40px 0 0;padding:80px 20px;position:relative;z-index:2}
-@media(min-width:640px){.services{border-radius:50px 50px 0 0;padding:96px 32px}}
-@media(min-width:768px){.services{border-radius:60px 60px 0 0;padding:128px 40px}}
-.services-heading{color:#0C0C0C;font-weight:900;text-transform:uppercase;text-align:center;font-size:clamp(3rem,12vw,160px);line-height:0.9;margin-bottom:64px}
-@media(min-width:640px){.services-heading{margin-bottom:80px}}
-@media(min-width:768px){.services-heading{margin-bottom:112px}}
-.services-list{max-width:64rem;margin:0 auto}
-.service-item{display:flex;gap:20px;align-items:flex-start;padding:32px 0;border-bottom:1px solid rgba(12,12,12,0.15)}
-@media(min-width:640px){.service-item{padding:40px 0}}
-@media(min-width:768px){.service-item{padding:48px 0}}
-.service-num{font-weight:900;font-size:clamp(3rem,10vw,140px);color:#0C0C0C;line-height:0.9;flex-shrink:0}
-.service-content{display:flex;flex-direction:column;gap:8px;padding-top:8px}
-.service-name{font-weight:500;text-transform:uppercase;font-size:clamp(1rem,2.2vw,2.1rem);color:#0C0C0C}
-.service-desc{font-weight:300;line-height:1.6;max-width:42rem;font-size:clamp(0.85rem,1.6vw,1.25rem);color:#0C0C0C;opacity:0.6}
-.projects{background:#0C0C0C;border-radius:40px 40px 0 0;margin-top:-40px;z-index:10;position:relative;padding:80px 0 40px}
-@media(min-width:640px){.projects{border-radius:50px 50px 0 0;margin-top:-48px}}
-@media(min-width:768px){.projects{border-radius:60px 60px 0 0;margin-top:-56px}}
-.projects-heading{font-weight:900;text-transform:uppercase;letter-spacing:-0.025em;line-height:0.9;text-align:center;font-size:clamp(3rem,12vw,160px);padding:0 20px;margin-bottom:48px}
-.video-card{max-width:580px;margin:0 auto 20px;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.07);border-radius:18px;overflow:hidden;backdrop-filter:blur(12px);transition:all 0.45s cubic-bezier(0.34,1.56,0.64,1)}
-.video-card:hover{border-color:rgba(0,212,255,0.2);box-shadow:0 18px 50px rgba(0,212,255,0.08);transform:translateY(-3px)}
+.about-deco{position:absolute;z-index:0;pointer-events:none;opacity:0.4;border-radius:50%;filter:blur(40px)}
+.services{background:#FFFFFF;border-radius:30px 30px 0 0;padding:50px 16px;position:relative;z-index:2}
+@media(min-width:640px){.services{border-radius:40px 40px 0 0;padding:70px 32px}}
+@media(min-width:768px){.services{border-radius:60px 60px 0 0;padding:100px 40px}}
+.services-heading{color:#0C0C0C;font-weight:900;text-transform:uppercase;text-align:center;font-size:clamp(2.5rem,10vw,120px);line-height:0.9;margin-bottom:40px}
+@media(min-width:768px){.services-heading{margin-bottom:70px;font-size:clamp(3rem,12vw,160px)}}
+.services-list{max-width:56rem;margin:0 auto}
+.service-item{display:flex;gap:16px;align-items:flex-start;padding:24px 0;border-bottom:1px solid rgba(12,12,12,0.12)}
+@media(min-width:640px){.service-item{padding:36px 0;gap:24px}}
+@media(min-width:768px){.service-item{padding:44px 0}}
+.service-num{font-weight:900;font-size:clamp(2.5rem,9vw,100px);color:#0C0C0C;line-height:0.9;flex-shrink:0;min-width:60px}
+@media(min-width:640px){.service-num{min-width:80px}}
+.service-content{display:flex;flex-direction:column;gap:6px;padding-top:6px}
+.service-name{font-weight:600;text-transform:uppercase;font-size:clamp(0.9rem,2vw,1.8rem);color:#0C0C0C;line-height:1.2}
+.service-desc{font-weight:300;line-height:1.6;max-width:42rem;font-size:clamp(0.8rem,1.5vw,1.1rem);color:#0C0C0C;opacity:0.6}
+.projects{background:#0C0C0C;border-radius:30px 30px 0 0;margin-top:-30px;z-index:10;position:relative;padding:50px 16px 40px}
+@media(min-width:640px){.projects{border-radius:40px 40px 0 0;margin-top:-40px;padding:70px 20px}}
+@media(min-width:768px){.projects{border-radius:60px 60px 0 0;margin-top:-50px;padding:100px 0 60px}}
+.projects-heading{font-weight:900;text-transform:uppercase;letter-spacing:-0.025em;line-height:0.9;text-align:center;font-size:clamp(2.5rem,10vw,120px);margin-bottom:32px}
+@media(min-width:768px){.projects-heading{font-size:clamp(3rem,12vw,160px);margin-bottom:48px}}
+.video-card{max-width:560px;margin:0 auto 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:14px;overflow:hidden;backdrop-filter:blur(10px);transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1)}
+@media(min-width:640px){.video-card{border-radius:18px;margin-bottom:18px}}
+.video-card:hover{border-color:rgba(0,212,255,0.2);box-shadow:0 15px 40px rgba(0,212,255,0.06);transform:translateY(-2px)}
 .video-thumb-wrap{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#0a0612}
 .video-thumb-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
-.video-card:hover .video-thumb-wrap img{transform:scale(1.06)}
-.video-thumb-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.1),rgba(0,0,0,0.5))}
-.play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;background:rgba(0,0,0,0.6);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;border:2px solid rgba(255,255,255,0.2);transition:all 0.35s}
-.play-btn svg{width:22px;height:22px;fill:#fff;margin-left:3px}
-.video-card:hover .play-btn{background:rgba(255,0,0,0.9);border-color:rgba(255,0,0,0.5);transform:translate(-50%,-50%) scale(1.15);box-shadow:0 0 30px rgba(255,0,0,0.5)}
-.badge-new{position:absolute;top:10px;left:10px;z-index:3;display:inline-flex;align-items:center;gap:4px;font-size:0.58rem;padding:4px 9px;border-radius:7px;background:linear-gradient(135deg,#ff6b1a,#ffb800);color:#fff;font-weight:700;text-transform:uppercase;animation:badgePulse 2s infinite}
-@keyframes badgePulse{0%,100%{opacity:1;box-shadow:0 0 10px rgba(255,107,26,0.5)}50%{opacity:0.85;box-shadow:0 0 18px rgba(255,107,26,0.7)}}
-.video-info{padding:14px 16px 10px}
-.video-title-row{display:flex;justify-content:space-between;gap:8px}
-.video-title{font-size:0.88rem;font-weight:600;flex:1;color:#D7E2EA}
-.video-ext-link{color:#7a7a92;transition:all 0.3s;flex-shrink:0}
-.video-ext-link svg{width:15px;height:15px;fill:currentColor}
+.video-card:hover .video-thumb-wrap img{transform:scale(1.05)}
+.video-thumb-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.1),rgba(0,0,0,0.4))}
+.play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;background:rgba(0,0,0,0.6);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;border:2px solid rgba(255,255,255,0.2);transition:all 0.3s}
+@media(min-width:640px){.play-btn{width:56px;height:56px}}
+.play-btn svg{width:20px;height:20px;fill:#fff;margin-left:3px}
+@media(min-width:640px){.play-btn svg{width:24px;height:24px}}
+.video-card:hover .play-btn{background:rgba(255,0,0,0.9);border-color:rgba(255,0,0,0.5);transform:translate(-50%,-50%) scale(1.15);box-shadow:0 0 25px rgba(255,0,0,0.5)}
+.badge-new{position:absolute;top:8px;left:8px;z-index:3;font-size:0.55rem;padding:3px 8px;border-radius:6px;background:linear-gradient(135deg,#ff6b1a,#ffb800);color:#fff;font-weight:700;text-transform:uppercase;animation:badgePulse 2s infinite}
+@media(min-width:640px){.badge-new{font-size:0.6rem;padding:4px 10px;top:10px;left:10px}}
+@keyframes badgePulse{0%,100%{opacity:1;box-shadow:0 0 8px rgba(255,107,26,0.5)}50%{opacity:0.8;box-shadow:0 0 16px rgba(255,107,26,0.7)}}
+.video-info{padding:12px 14px 8px}
+@media(min-width:640px){.video-info{padding:14px 16px 10px}}
+.video-title-row{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.video-title{font-size:0.82rem;font-weight:600;flex:1;color:#D7E2EA;line-height:1.3}
+@media(min-width:640px){.video-title{font-size:0.9rem}}
+.video-ext-link{color:#7a7a92;transition:all 0.3s;flex-shrink:0;margin-top:2px}
+.video-ext-link svg{width:14px;height:14px;fill:currentColor}
+@media(min-width:640px){.video-ext-link svg{width:16px;height:16px}}
 .video-card:hover .video-ext-link{color:#00d4ff;transform:translate(2px,-2px)}
-.video-meta{font-size:0.68rem;color:#7a7a92;margin-top:5px;display:flex;gap:6px}
-.resources-btn{display:flex;align-items:center;justify-content:space-between;width:100%;padding:10px 16px;background:rgba(0,229,204,0.04);border-top:1px solid rgba(255,255,255,0.04);border:none;color:#00e5cc;font-size:0.72rem;font-weight:600;cursor:pointer;font-family:inherit;transition:background 0.3s;text-align:left}
+.video-meta{font-size:0.65rem;color:#7a7a92;margin-top:4px;display:flex;gap:5px;flex-wrap:wrap}
+@media(min-width:640px){.video-meta{font-size:0.7rem;gap:6px}}
+.resources-btn{display:flex;align-items:center;justify-content:space-between;width:100%;padding:9px 14px;background:rgba(0,229,204,0.04);border-top:1px solid rgba(255,255,255,0.04);border:none;color:#00e5cc;font-size:0.68rem;font-weight:600;cursor:pointer;font-family:inherit;transition:background 0.3s;text-align:left}
+@media(min-width:640px){.resources-btn{padding:10px 16px;font-size:0.72rem}}
 .resources-btn:hover{background:rgba(0,229,204,0.08)}
-.resources-btn svg{width:14px;height:14px;fill:currentColor}
-.resources-btn .chev{transition:transform 0.3s}
+.resources-btn-left{display:flex;align-items:center;gap:6px}
+.resources-btn svg{width:13px;height:13px;fill:currentColor}
+.resources-btn .chev{transition:transform 0.3s;display:flex;align-items:center}
+.resources-btn .chev svg{width:12px;height:12px}
 .resources-btn.expanded .chev{transform:rotate(180deg)}
-.resources-content{max-height:0;overflow:hidden;transition:max-height 0.4s;padding:0 16px}
-.resources-content.expanded{max-height:2000px;padding:0 16px 14px}
-.resource-placeholder{font-size:0.68rem;color:#7a7a92;font-style:italic;padding:8px 0}
-.prompt-card{background:rgba(0,0,0,0.3);border:1px solid rgba(0,229,204,0.12);border-radius:11px;padding:12px;margin-top:10px}
+.resources-content{max-height:0;overflow:hidden;transition:max-height 0.4s;padding:0 14px}
+@media(min-width:640px){.resources-content{padding:0 16px}}
+.resources-content.expanded{max-height:2000px;padding:0 14px 14px}
+@media(min-width:640px){.resources-content.expanded{padding:0 16px 14px}}
+.resource-placeholder{font-size:0.65rem;color:#7a7a92;font-style:italic;padding:8px 0}
+.prompt-card{background:rgba(0,0,0,0.3);border:1px solid rgba(0,229,204,0.1);border-radius:10px;padding:11px;margin-top:8px}
+@media(min-width:640px){.prompt-card{padding:12px;margin-top:10px;border-radius:11px}}
 .prompt-card:first-child{margin-top:0}
-.prompt-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.prompt-label{display:flex;align-items:center;gap:6px;font-size:0.7rem;font-weight:700;color:#00e5cc}
-.prompt-label svg{width:13px;height:13px;fill:#00e5cc}
-.copy-btn{font-size:0.62rem;padding:4px 10px;border-radius:7px;background:rgba(0,229,204,0.1);border:1px solid rgba(0,229,204,0.2);color:#00e5cc;cursor:pointer;font-family:inherit;font-weight:600;transition:all 0.3s}
+.prompt-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;gap:8px}
+.prompt-label{display:flex;align-items:center;gap:5px;font-size:0.65rem;font-weight:700;color:#00e5cc;flex:1}
+@media(min-width:640px){.prompt-label{font-size:0.7rem;gap:6px}}
+.prompt-label svg{width:12px;height:12px;fill:#00e5cc;flex-shrink:0}
+@media(min-width:640px){.prompt-label svg{width:13px;height:13px}}
+.copy-btn{font-size:0.58rem;padding:3px 8px;border-radius:6px;background:rgba(0,229,204,0.1);border:1px solid rgba(0,229,204,0.2);color:#00e5cc;cursor:pointer;font-family:inherit;font-weight:600;transition:all 0.3s;flex-shrink:0}
+@media(min-width:640px){.copy-btn{font-size:0.62rem;padding:4px 10px;border-radius:7px}}
 .copy-btn:hover{background:rgba(0,229,204,0.2);transform:scale(1.05)}
 .copy-btn.copied{background:rgba(0,229,204,0.3);color:#fff}
-.prompt-text{font-size:0.73rem;line-height:1.55;color:#d0d0e0;white-space:pre-wrap;word-break:break-word}
-.contact-section{background:#0C0C0C;padding:40px 20px 60px}
-.contact-form-wrap{max-width:580px;margin:0 auto;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:18px;backdrop-filter:blur(12px)}
-.tabs{display:flex;gap:7px;margin-bottom:12px}
-.tab-btn{flex:1;padding:9px;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.07);border-radius:11px;color:#d0d0e0;font-size:0.75rem;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:5px;transition:all 0.3s}
-.tab-btn svg{width:14px;height:14px;fill:currentColor}
-.tab-btn.active{background:rgba(0,212,255,0.08);border-color:rgba(0,212,255,0.3);color:#00d4ff}
-.tab-content{display:none}
-.tab-content.active{display:block}
-.form-group{margin-bottom:12px}
-.form-group label{display:block;font-size:0.7rem;font-weight:600;color:#d0d0e0;margin-bottom:5px}
-.form-input,.form-textarea{width:100%;padding:11px 13px;background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.07);border-radius:11px;color:#f5f5fa;font-size:0.85rem;font-family:inherit;outline:none;transition:all 0.3s}
-.form-input:focus,.form-textarea:focus{border-color:rgba(0,212,255,0.4);box-shadow:0 0 20px rgba(0,212,255,0.1)}
-.form-textarea{min-height:75px;resize:vertical}
-.form-btn{width:100%;padding:12px;background:linear-gradient(123deg,#18011F 7%,#B600A8 37%,#7621B0 72%,#BE4C00 100%);border:none;border-radius:12px;color:#fff;font-size:0.85rem;font-weight:700;letter-spacing:1.5px;cursor:pointer;font-family:inherit;text-transform:uppercase;outline:2px solid rgba(255,255,255,0.5);outline-offset:-3px;transition:transform 0.3s}
-.form-btn:hover{transform:translateY(-2px) scale(1.01)}
-.footer{text-align:center;padding:30px 20px;border-top:1px solid rgba(255,255,255,0.05)}
-.footer p{font-size:0.7rem;color:#7a7a92;line-height:1.6}
-.footer .heart{color:#ff6b1a}
+.prompt-text{font-size:0.68rem;line-height:1.5;color:#d0d0e0;white-space:pre-wrap;word-break:break-word}
+@media(min-width:640px){.prompt-text{font-size:0.73rem;line-height:1.55}}
+.contact-section{background:#0C0C0C;padding:40px 16px 50px}
+.contact-form-wrap{max-width:560px;margin:0 auto;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:16px;backdrop-filter:blur(10px)}
+@media(min-width:640px){.contact-form-wrap{border-radius:20px;padding:18px}}
 .socials{display:flex;justify-content:center;gap:10px;margin-bottom:20px}
-.social-icon{width:42px;height:42px;border-radius:13px;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1)}
-.social-icon svg{width:18px;height:18px;fill:#d0d0e0;transition:all 0.3s}
-.social-icon:hover{transform:translateY(-5px) scale(1.12)}
-.social-icon:nth-child(1):hover{border-color:rgba(255,0,0,0.4);background:rgba(255,0,0,0.08);box-shadow:0 10px 30px rgba(255,0,0,0.2)}.social-icon:nth-child(1):hover svg{fill:#ff0000}
+.social-icon{width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1)}
+@media(min-width:640px){.social-icon{width:42px;height:42px;border-radius:13px}}
+.social-icon svg{width:17px;height:17px;fill:#d0d0e0;transition:all 0.3s}
+@media(min-width:640px){.social-icon svg{width:18px;height:18px}}
+.social-icon:hover{transform:translateY(-4px) scale(1.1)}
+.social-icon:nth-child(1):hover{border-color:rgba(255,0,0,0.4);background:rgba(255,0,0,0.08);box-shadow:0 8px 25px rgba(255,0,0,0.15)}.social-icon:nth-child(1):hover svg{fill:#ff0000}
 .social-icon:nth-child(2):hover{border-color:rgba(255,107,26,0.4);background:rgba(255,107,26,0.08)}.social-icon:nth-child(2):hover svg{fill:#ff6b1a}
 .social-icon:nth-child(3):hover{border-color:rgba(110,139,255,0.4);background:rgba(110,139,255,0.08)}.social-icon:nth-child(3):hover svg{fill:#6e8bff}
-@media(max-width:480px){.hero h1{font-size:13vw}}
+.tabs{display:flex;gap:7px;margin-bottom:12px}
+.tab-btn{flex:1;padding:9px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;color:#d0d0e0;font-size:0.72rem;font-weight:600;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:5px;transition:all 0.3s}
+@media(min-width:640px){.tab-btn{font-size:0.75rem;border-radius:11px}}
+.tab-btn svg{width:13px;height:13px;fill:currentColor}
+@media(min-width:640px){.tab-btn svg{width:14px;height:14px}}
+.tab-btn.active{background:rgba(0,212,255,0.08);border-color:rgba(0,212,255,0.3);color:#00d4ff}
+.tab-btn:hover:not(.active){background:rgba(255,255,255,0.06);color:#D7E2EA}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.form-group{margin-bottom:11px}
+.form-group label{display:block;font-size:0.68rem;font-weight:600;color:#d0d0e0;margin-bottom:4px}
+@media(min-width:640px){.form-group label{font-size:0.7rem;margin-bottom:5px}}
+.form-input,.form-textarea{width:100%;padding:10px 12px;background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.06);border-radius:10px;color:#f5f5fa;font-size:0.82rem;font-family:inherit;outline:none;transition:all 0.3s}
+@media(min-width:640px){.form-input,.form-textarea{padding:11px 13px;font-size:0.85rem;border-radius:11px}}
+.form-input::placeholder,.form-textarea::placeholder{color:#7a7a92}
+.form-input:focus,.form-textarea:focus{border-color:rgba(0,212,255,0.4);box-shadow:0 0 15px rgba(0,212,255,0.08)}
+.form-textarea{min-height:70px;resize:vertical}
+@media(min-width:640px){.form-textarea{min-height:75px}}
+.form-btn{width:100%;padding:11px;background:linear-gradient(123deg,#18011F 7%,#B600A8 37%,#7621B0 72%,#BE4C00 100%);border:none;border-radius:10px;color:#fff;font-size:0.8rem;font-weight:700;letter-spacing:1.5px;cursor:pointer;font-family:inherit;text-transform:uppercase;outline:2px solid rgba(255,255,255,0.5);outline-offset:-3px;transition:transform 0.3s}
+@media(min-width:640px){.form-btn{padding:12px;font-size:0.85rem;border-radius:12px}}
+.form-btn:hover{transform:translateY(-2px) scale(1.01)}
+.footer{text-align:center;padding:24px 16px;border-top:1px solid rgba(255,255,255,0.04)}
+.footer p{font-size:0.65rem;color:#7a7a92;line-height:1.6}
+@media(min-width:640px){.footer p{font-size:0.7rem}}
+.footer .heart{color:#ff6b1a}
 </style>
 </head>
 <body>
@@ -149,18 +174,16 @@ html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overfl
   <nav class="navbar fade-in" style="transition-delay:0s">
     <a href="#about" class="nav-link">About</a>
     <a href="#services" class="nav-link">Videos</a>
-    <a href="#projects" class="nav-link">Resources</a>
+    <a href="#projects" class="nav-link">Watch</a>
     <a href="#contact" class="nav-link">Contact</a>
   </nav>
-  <div class="hero-portrait fade-in" style="transition-delay:0.6s;transform:translateY(30px)">
-    <img src="https://res.cloudinary.com/acqrwkcn/image/upload/v1788937188/1000124621.png" alt="MR. VICKY" onerror="this.style.display='none'">
-  </div>
-  <div class="hero-heading-wrap fade-in" style="transition-delay:0.15s;transform:translateY(40px)">
-    <h1 class="hero-heading">MR. VICKY</h1>
-  </div>
-  <div class="hero-bottom">
-    <p class="hero-text-left fade-in" style="transition-delay:0.35s;transform:translateY(20px)">a creator driven by money earning, finance & building websites</p>
-    <a href="#contact" class="contact-btn fade-in" style="transition-delay:0.5s;transform:translateY(20px)">Contact Me</a>
+  <div class="hero-content">
+    <div class="hero-portrait fade-in" style="transition-delay:0.1s">
+      <img src="https://res.cloudinary.com/acqrwkcn/image/upload/v1788937188/1000124621.png" alt="MR. VICKY" onerror="this.style.display='none'">
+    </div>
+    <h1 class="hero-heading hero-title fade-in" style="transition-delay:0.2s">MR. VICKY</h1>
+    <p class="hero-tagline fade-in" style="transition-delay:0.35s">a creator driven by money earning, finance & building websites</p>
+    <a href="#contact" class="contact-btn fade-in" style="transition-delay:0.5s">Contact Me</a>
   </div>
 </section>
 <section class="marquee-section">
@@ -168,62 +191,60 @@ html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overfl
   <div class="marquee-row" id="marquee-row-2"></div>
 </section>
 <section class="about" id="about">
-  <div class="about-deco" style="top:4%;left:2%;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,255,0.15),transparent 70%)"></div>
-  <div class="about-deco" style="bottom:8%;left:6%;width:100px;height:100px;border-radius:30%;background:radial-gradient(circle,rgba(255,107,26,0.12),transparent 70%)"></div>
-  <div class="about-deco" style="top:4%;right:2%;width:120px;height:120px;border-radius:20px;background:radial-gradient(circle,rgba(110,139,255,0.12),transparent 70%)"></div>
-  <div class="about-deco" style="bottom:8%;right:6%;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,rgba(255,184,0,0.1),transparent 70%)"></div>
-  <div class="about-content">
-    <h2 class="hero-heading about-heading fade-in">ABOUT ME</h2>
-    <p class="about-text" id="about-text">With more than five years of experience in content creation, i focus on money earning strategies, finance, website building, and discovering new tools. i truly enjoy working with ideas that aim to stand out and help people grow. Let's build something incredible together!</p>
-    <a href="#contact" class="contact-btn fade-in" style="transition-delay:0.2s">Contact Me</a>
-  </div>
+  <div class="about-deco" style="top:5%;left:3%;width:100px;height:100px;background:radial-gradient(circle,rgba(0,212,255,0.2),transparent 70%)"></div>
+  <div class="about-deco" style="bottom:10%;left:8%;width:80px;height:80px;background:radial-gradient(circle,rgba(255,107,26,0.15),transparent 70%)"></div>
+  <div class="about-deco" style="top:5%;right:3%;width:100px;height:100px;background:radial-gradient(circle,rgba(110,139,255,0.15),transparent 70%)"></div>
+  <div class="about-deco" style="bottom:10%;right:8%;width:90px;height:90px;background:radial-gradient(circle,rgba(255,184,0,0.12),transparent 70%)"></div>
+  <h2 class="hero-heading about-heading fade-in">ABOUT ME</h2>
+  <p class="about-text" id="about-text">With more than five years of experience in content creation, i focus on money earning strategies, finance, website building, and discovering new tools. i truly enjoy working with ideas that aim to stand out and help people grow. Let's build something incredible together!</p>
+  <a href="#contact" class="contact-btn fade-in" style="transition-delay:0.2s">Contact Me</a>
 </section>
 <section class="services" id="services">
   <h2 class="services-heading fade-in">VIDEOS</h2>
   <div class="services-list">
-    <div class="service-item fade-in" style="transition-delay:0s"><span class="service-num">01</span><div class="service-content"><span class="service-name">Motion Designers Will HATE This Video</span><p class="service-desc">AI is reshaping how we create motion graphics. This video explores how tools like Claude Code and HyperFrames are changing the game for motion designers. 9:27 • 8 views • NEW</p></div></div>
-    <div class="service-item fade-in" style="transition-delay:0.1s"><span class="service-num">02</span><div class="service-content"><span class="service-name">I Tried BILIBILI App for Earning Money</span><p class="service-desc">Exploring the Bilibili app as a platform for earning money online. A detailed review of how it works and whether it's worth your time. 6:26 • 120 views</p></div></div>
-    <div class="service-item fade-in" style="transition-delay:0.2s"><span class="service-num">03</span><div class="service-content"><span class="service-name">How to Earn ₹5000 Per Week with Meesho Affiliate</span><p class="service-desc">A complete beginner's guide to earning money through the Meesho Affiliate Program with zero investment. Step-by-step process explained in Hindi. 14:41 • 5.3K views</p></div></div>
-    <div class="service-item fade-in" style="transition-delay:0.3s"><span class="service-num">04</span><div class="service-content"><span class="service-name">Dangerously Become a SELF-EDUCATED</span><p class="service-desc">The power of self-education and how it can transform your life. Discipline is permanent motivation. Learn why self-taught skills matter more than ever. 5:53 • 9 views</p></div></div>
-    <div class="service-item fade-in" style="transition-delay:0.4s"><span class="service-num">05</span><div class="service-content"><span class="service-name">Channel Vision</span><p class="service-desc">MR. VICKY is about simple ideas, real strategies, and a better you. Subscribe to join a growing community of learners and earners. New videos every week on money, finance, tools, and website building.</p></div></div>
+    <div class="service-item fade-in"><span class="service-num">01</span><div class="service-content"><span class="service-name">Motion Designers Will HATE This Video</span><p class="service-desc">AI is reshaping how we create motion graphics. This video explores how tools like Claude Code and HyperFrames are changing the game. 9:27 • 8 views • NEW</p></div></div>
+    <div class="service-item fade-in"><span class="service-num">02</span><div class="service-content"><span class="service-name">I Tried BILIBILI App for Earning Money</span><p class="service-desc">Exploring the Bilibili app as a platform for earning money online. A detailed review of how it works. 6:26 • 120 views</p></div></div>
+    <div class="service-item fade-in"><span class="service-num">03</span><div class="service-content"><span class="service-name">How to Earn ₹5000 Per Week with Meesho Affiliate</span><p class="service-desc">A complete beginner's guide to earning through Meesho Affiliate Program with zero investment. Step-by-step in Hindi. 14:41 • 5.3K views</p></div></div>
+    <div class="service-item fade-in"><span class="service-num">04</span><div class="service-content"><span class="service-name">Dangerously Become a SELF-EDUCATED</span><p class="service-desc">The power of self-education and how it can transform your life. Discipline is permanent motivation. 5:53 • 9 views</p></div></div>
+    <div class="service-item fade-in"><span class="service-num">05</span><div class="service-content"><span class="service-name">Channel Vision</span><p class="service-desc">MR. VICKY is about simple ideas, real strategies, and a better you. Subscribe to join a growing community. New videos every week on money, finance, tools, and website building.</p></div></div>
   </div>
 </section>
 <section class="projects" id="projects">
   <h2 class="hero-heading projects-heading fade-in">WATCH</h2>
-  <div class="video-card fade-in" style="margin-bottom:14px">
+  <div class="video-card fade-in">
     <a href="https://www.youtube.com/watch?v=9RzWDVzXGi0" target="_blank" style="text-decoration:none;color:inherit">
       <div class="video-thumb-wrap"><span class="badge-new">NEW</span><img src="https://i.ytimg.com/vi/9RzWDVzXGi0/hqdefault.jpg" alt="Motion Designers" onerror="this.style.display='none'"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
       <div class="video-info"><div class="video-title-row"><div class="video-title">Motion Designers Will HATE This Video...</div><div class="video-ext-link"><svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg></div></div><div class="video-meta"><span>9:27</span><span>•</span><span>8 views</span><span>•</span><span>3 hours ago</span></div></div>
     </a>
-    <button class="resources-btn" onclick="toggleResources(this,'res1')"><span style="display:flex;align-items:center;gap:6px"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg> Video resources</span><span class="chev"><svg viewBox="0 0 24 24" style="width:12px;height:12px"><path fill="#00e5cc" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></span></button>
+    <button class="resources-btn" onclick="toggleResources(this,'res1')"><span class="resources-btn-left"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg> Video resources</span><span class="chev"><svg viewBox="0 0 24 24"><path fill="#00e5cc" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></span></button>
     <div class="resources-content" id="res1">
-      <div class="prompt-card"><div class="prompt-header"><div class="prompt-label"><svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> Prompt 1: Video Analysis Prompt</div><button class="copy-btn" onclick="copyPrompt(this,'prompt1')">Copy</button></div><div class="prompt-text" id="prompt1">Analyze this video scene by scene and generate detailed Ai video prompt for each shot/frame including camera angles, subject actions, lighting, environment, facial expressions, composition, transitions and cinematic style. Make the prompts accurate enough to recreate the video as close as possible. Make sure to include the exact texts in the video into the prompt.</div></div>
-      <div class="prompt-card"><div class="prompt-header"><div class="prompt-label"><svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> Prompt 2: Audio & Negative Prompt</div><button class="copy-btn" onclick="copyPrompt(this,'prompt2')">Copy</button></div><div class="prompt-text" id="prompt2">Use Professional sound effect design.\nNegative prompts: Do not include voice-over, Speech, or background music in the video. (If it has voice-over, speech, or background music, do not generate.)</div></div>
+      <div class="prompt-card"><div class="prompt-header"><div class="prompt-label"><svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> Prompt 1: Video Analysis</div><button class="copy-btn" onclick="copyPrompt(this,'prompt1')">Copy</button></div><div class="prompt-text" id="prompt1">Analyze this video scene by scene and generate detailed Ai video prompt for each shot/frame including camera angles, subject actions, lighting, environment, facial expressions, composition, transitions and cinematic style. Make the prompts accurate enough to recreate the video as close as possible. Make sure to include the exact texts in the video into the prompt.</div></div>
+      <div class="prompt-card"><div class="prompt-header"><div class="prompt-label"><svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> Prompt 2: Audio & Negative</div><button class="copy-btn" onclick="copyPrompt(this,'prompt2')">Copy</button></div><div class="prompt-text" id="prompt2">Use Professional sound effect design.\nNegative prompts: Do not include voice-over, Speech, or background music in the video. (If it has voice-over, speech, or background music, do not generate.)</div></div>
       <div class="prompt-card"><div class="prompt-header"><div class="prompt-label"><svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> Prompt 3: Script Adaptation</div><button class="copy-btn" onclick="copyPrompt(this,'prompt3')">Copy</button></div><div class="prompt-text" id="prompt3">I want you to repurpose the video animation. I want you to change the 3D assets and elements in the animation and use assets and elements that suit and are relevant to this new narration script: ["AI isn't coming - it's already here, reshaping how we work, create, and think. Every industry is shifting. Every skill is evolving. Think about the best professionals; they adapt constantly and grow with the tools. Those who adapt will lead; those who resist will struggle to keep up. This isn't about replacing humans - it's about amplifying what we can do. The future favors the adaptable. Start now."].</div></div>
     </div>
   </div>
-  <div class="video-card fade-in" style="margin-bottom:14px">
+  <div class="video-card fade-in">
     <a href="https://www.youtube.com/watch?v=P66FuHv69wg" target="_blank" style="text-decoration:none;color:inherit">
       <div class="video-thumb-wrap"><img src="https://i.ytimg.com/vi/P66FuHv69wg/hqdefault.jpg" alt="BILIBILI" onerror="this.style.display='none'"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
       <div class="video-info"><div class="video-title-row"><div class="video-title">I Tried BILIBILI app for earning Money</div><div class="video-ext-link"><svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg></div></div><div class="video-meta"><span>6:26</span><span>•</span><span>120 views</span><span>•</span><span>3 days ago</span></div></div>
     </a>
-    <button class="resources-btn" onclick="toggleResources(this,'res2')"><span style="display:flex;align-items:center;gap:6px"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg> Video resources</span><span class="chev"><svg viewBox="0 0 24 24" style="width:12px;height:12px"><path fill="#00e5cc" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></span></button>
+    <button class="resources-btn" onclick="toggleResources(this,'res2')"><span class="resources-btn-left"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg> Video resources</span><span class="chev"><svg viewBox="0 0 24 24"><path fill="#00e5cc" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></span></button>
     <div class="resources-content" id="res2"><div class="resource-placeholder">Add links, tools or notes.</div></div>
   </div>
-  <div class="video-card fade-in" style="margin-bottom:14px">
+  <div class="video-card fade-in">
     <a href="https://www.youtube.com/watch?v=6b3WhkzwP-o" target="_blank" style="text-decoration:none;color:inherit">
       <div class="video-thumb-wrap"><img src="https://i.ytimg.com/vi/6b3WhkzwP-o/hqdefault.jpg" alt="Meesho" onerror="this.style.display='none'"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
       <div class="video-info"><div class="video-title-row"><div class="video-title">How to earn ₹5000 per WEEK with Meesho Affiliate</div><div class="video-ext-link"><svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg></div></div><div class="video-meta"><span>14:41</span><span>•</span><span>5.3K views</span><span>•</span><span>6 days ago</span></div></div>
     </a>
-    <button class="resources-btn" onclick="toggleResources(this,'res3')"><span style="display:flex;align-items:center;gap:6px"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg> Video resources</span><span class="chev"><svg viewBox="0 0 24 24" style="width:12px;height:12px"><path fill="#00e5cc" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></span></button>
+    <button class="resources-btn" onclick="toggleResources(this,'res3')"><span class="resources-btn-left"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg> Video resources</span><span class="chev"><svg viewBox="0 0 24 24"><path fill="#00e5cc" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></span></button>
     <div class="resources-content" id="res3"><div class="resource-placeholder">Add links, tools or notes.</div></div>
   </div>
-  <div class="video-card fade-in" style="margin-bottom:14px">
+  <div class="video-card fade-in">
     <a href="https://www.youtube.com/watch?v=tI3PHQt16xw" target="_blank" style="text-decoration:none;color:inherit">
       <div class="video-thumb-wrap"><img src="https://i.ytimg.com/vi/tI3PHQt16xw/hqdefault.jpg" alt="Self-Educated" onerror="this.style.display='none'"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
       <div class="video-info"><div class="video-title-row"><div class="video-title">Dangerously become a SELF-EDUCATED</div><div class="video-ext-link"><svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg></div></div><div class="video-meta"><span>5:53</span><span>•</span><span>9 views</span><span>•</span><span>11 days ago</span></div></div>
     </a>
-    <button class="resources-btn" onclick="toggleResources(this,'res4')"><span style="display:flex;align-items:center;gap:6px"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg> Video resources</span><span class="chev"><svg viewBox="0 0 24 24" style="width:12px;height:12px"><path fill="#00e5cc" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></span></button>
+    <button class="resources-btn" onclick="toggleResources(this,'res4')"><span class="resources-btn-left"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg> Video resources</span><span class="chev"><svg viewBox="0 0 24 24"><path fill="#00e5cc" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></span></button>
     <div class="resources-content" id="res4"><div class="resource-placeholder">Add links, tools or notes.</div></div>
   </div>
 </section>
@@ -260,10 +281,11 @@ html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overfl
 </section>
 <div class="footer"><p>© 2026 MR. VICKY — Learn Grow Succeed</p><p>Made with <span class="heart">♥</span> for our community</p></div>
 <script>
-var fadeObserver=new IntersectionObserver(function(e){e.forEach(function(t){if(t.isIntersecting)t.target.classList.add('visible')})},{threshold:0.05,rootMargin:'50px'});
+var fadeObserver=new IntersectionObserver(function(e){e.forEach(function(t){if(t.isIntersecting)t.target.classList.add('visible')})},{threshold:0.05,rootMargin:'30px'});
 document.querySelectorAll('.fade-in').forEach(function(e){fadeObserver.observe(e)});
 var aboutText=document.getElementById('about-text');
-if(aboutText){var txt=aboutText.textContent;aboutText.innerHTML='';for(var i=0;i<txt.length;i++){var s=document.createElement('span');s.className='char';s.textContent=txt[i]===' '?'\u00A0':txt[i];aboutText.appendChild(s)}var chars=aboutText.querySelectorAll('.char');var to=new IntersectionObserver(function(e){e.forEach(function(t){if(t.isIntersecting)chars.forEach(function(c,i){setTimeout(function(){c.classList.add('lit')},i*20)})})},{threshold:0.1});to.observe(aboutText)}
+if(aboutText){var txt=aboutText.textContent;aboutText.innerHTML='';for(var i=0;i<txt.length;i++){var s=document.createElement('span');s.className='char';s.textContent=txt[i]===' '?'\u00A0':txt[i];aboutText.appendChild(s)}
+var chars=aboutText.querySelectorAll('.char');var to=new IntersectionObserver(function(e){e.forEach(function(t){if(t.isIntersecting)chars.forEach(function(c,i){setTimeout(function(){c.classList.add('lit')},i*20)})})},{threshold:0.1});to.observe(aboutText)}
 var thumbs=['https://i.ytimg.com/vi/9RzWDVzXGi0/hqdefault.jpg','https://i.ytimg.com/vi/P66FuHv69wg/hqdefault.jpg','https://i.ytimg.com/vi/6b3WhkzwP-o/hqdefault.jpg','https://i.ytimg.com/vi/tI3PHQt16xw/hqdefault.jpg','https://res.cloudinary.com/acqrwkcn/image/upload/v1788937314/file_000000009b548211bd6483b2dd13d99d.png','https://res.cloudinary.com/acqrwkcn/image/upload/v1788937188/1000124621.png'];
 var r1=document.getElementById('marquee-row-1'),r2=document.getElementById('marquee-row-2');
 function buildRow(r,imgs){var a=imgs.concat(imgs,imgs);a.forEach(function(s){var i=document.createElement('img');i.src=s;i.className='marquee-tile';i.loading='lazy';r.appendChild(i)})}
