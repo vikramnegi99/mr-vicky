@@ -19,6 +19,8 @@ html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overfl
 .hero-heading{background:linear-gradient(180deg,#646973 0%,#BBCCD7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .fade-in{opacity:0;transform:translateY(30px);transition:opacity 0.7s cubic-bezier(0.25,0.1,0.25,1),transform 0.7s cubic-bezier(0.25,0.1,0.25,1)}
 .fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* HERO */
 .hero{display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:60px 16px 30px}
 @media(min-width:768px){.hero{padding:80px 20px 50px}}
 .navbar{position:absolute;top:0;left:0;width:100%;display:flex;justify-content:center;gap:16px;padding:14px;z-index:30}
@@ -47,12 +49,24 @@ html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overfl
 @media(min-width:480px){.contact-btn{padding:11px 32px;font-size:0.75rem}}
 @media(min-width:768px){.contact-btn{padding:16px 48px;font-size:1rem}}
 .contact-btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 8px 20px rgba(181,1,167,0.4),inset 4px 4px 12px #7721B1}
+
+.hero-buttons{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.ai-prompt-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:9999px;padding:9px 20px;font-size:0.6rem;color:#00e5cc;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;background:rgba(0,229,204,0.06);border:1px solid rgba(0,229,204,0.25);cursor:pointer;font-family:inherit;transition:all 0.3s;flex-shrink:0}
+@media(min-width:480px){.ai-prompt-btn{padding:11px 28px;font-size:0.7rem}}
+@media(min-width:768px){.ai-prompt-btn{padding:14px 36px;font-size:0.9rem}}
+.ai-prompt-btn svg{width:14px;height:14px;fill:currentColor}
+@media(min-width:768px){.ai-prompt-btn svg{width:18px;height:18px}}
+.ai-prompt-btn:hover{background:rgba(0,229,204,0.12);border-color:rgba(0,229,204,0.5);transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,229,204,0.15)}
+
+/* MARQUEE */
 .marquee-section{background:#0C0C0C;padding:30px 0 20px;overflow:hidden}
 @media(min-width:768px){.marquee-section{padding:50px 0 30px}}
 .marquee-row{display:flex;gap:8px;will-change:transform;margin-bottom:8px}
 .marquee-tile{width:200px;height:120px;border-radius:10px;object-fit:cover;flex-shrink:0}
 @media(min-width:640px){.marquee-tile{width:320px;height:190px;border-radius:14px}}
 @media(min-width:768px){.marquee-tile{width:400px;height:240px;border-radius:16px}}
+
+/* ABOUT */
 .about{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap:20px;position:relative;overflow:hidden}
 @media(min-width:480px){.about{gap:28px}}
 @media(min-width:768px){.about{padding:70px 40px;gap:40px}}
@@ -61,6 +75,8 @@ html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overfl
 .about-text .char{display:inline-block;opacity:0.15;transition:opacity 0.3s ease}
 .about-text .char.lit{opacity:1}
 .about-deco{position:absolute;z-index:0;pointer-events:none;opacity:0.4;border-radius:50%;filter:blur(40px)}
+
+/* SERVICES */
 .services{background:#FFFFFF;border-radius:24px 24px 0 0;padding:40px 16px;position:relative;z-index:2}
 @media(min-width:640px){.services{border-radius:36px 36px 0 0;padding:60px 32px}}
 @media(min-width:768px){.services{border-radius:50px 50px 0 0;padding:80px 40px}}
@@ -75,11 +91,21 @@ html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overfl
 .service-content{display:flex;flex-direction:column;gap:4px;padding-top:4px}
 .service-name{font-weight:600;text-transform:uppercase;font-size:clamp(0.85rem,2vw,1.8rem);color:#0C0C0C;line-height:1.2}
 .service-desc{font-weight:300;line-height:1.5;max-width:42rem;font-size:clamp(0.78rem,1.5vw,1.1rem);color:#0C0C0C;opacity:0.6}
+
+/* PROJECTS */
 .projects{background:#0C0C0C;border-radius:24px 24px 0 0;margin-top:-24px;z-index:10;position:relative;padding:40px 16px 30px}
 @media(min-width:640px){.projects{border-radius:36px 36px 0 0;margin-top:-32px;padding:55px 20px}}
 @media(min-width:768px){.projects{border-radius:50px 50px 0 0;margin-top:-40px;padding:70px 0 50px}}
 .projects-heading{font-weight:900;text-transform:uppercase;letter-spacing:-0.025em;line-height:0.9;text-align:center;font-size:clamp(2.5rem,10vw,120px);margin-bottom:24px}
 @media(min-width:768px){.projects-heading{font-size:clamp(3rem,12vw,160px);margin-bottom:40px}}
+.projects-cta{text-align:center;margin-bottom:28px}
+.projects-cta-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:9999px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#00e5cc;background:rgba(0,229,204,0.08);border:2px solid rgba(0,229,204,0.3);cursor:pointer;font-family:inherit;transition:all 0.3s}
+@media(min-width:640px){.projects-cta-btn{padding:14px 36px;font-size:0.85rem}}
+@media(min-width:768px){.projects-cta-btn{padding:16px 44px;font-size:1rem}}
+.projects-cta-btn svg{width:16px;height:16px;fill:currentColor}
+@media(min-width:640px){.projects-cta-btn svg{width:20px;height:20px}}
+.projects-cta-btn:hover{background:rgba(0,229,204,0.15);border-color:rgba(0,229,204,0.6);transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,229,204,0.2)}
+
 .video-card{max-width:560px;margin:0 auto 12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:14px;overflow:hidden;backdrop-filter:blur(10px);transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1)}
 @media(min-width:640px){.video-card{border-radius:18px;margin-bottom:16px}}
 .video-card:hover{border-color:rgba(0,212,255,0.2);box-shadow:0 15px 40px rgba(0,212,255,0.06);transform:translateY(-2px)}
@@ -106,6 +132,8 @@ html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overfl
 .video-card:hover .video-ext-link{color:#00d4ff;transform:translate(2px,-2px)}
 .video-meta{font-size:0.63rem;color:#7a7a92;margin-top:3px;display:flex;gap:5px;flex-wrap:wrap}
 @media(min-width:640px){.video-meta{font-size:0.7rem;gap:6px}}
+
+/* Resources toggle (old) */
 .resources-btn{display:flex;align-items:center;justify-content:space-between;width:100%;padding:9px 14px;background:rgba(0,229,204,0.04);border-top:1px solid rgba(255,255,255,0.04);border:none;color:#00e5cc;font-size:0.66rem;font-weight:600;cursor:pointer;font-family:inherit;transition:background 0.3s;text-align:left}
 @media(min-width:640px){.resources-btn{padding:10px 16px;font-size:0.72rem}}
 .resources-btn:hover{background:rgba(0,229,204,0.08)}
@@ -119,20 +147,102 @@ html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overfl
 .resources-content.expanded{max-height:2000px;padding:0 14px 14px}
 @media(min-width:640px){.resources-content.expanded{padding:0 16px 14px}}
 .resource-placeholder{font-size:0.65rem;color:#7a7a92;font-style:italic;padding:8px 0}
-.prompt-card{background:rgba(0,0,0,0.3);border:1px solid rgba(0,229,204,0.1);border-radius:10px;padding:11px;margin-top:8px}
-@media(min-width:640px){.prompt-card{padding:12px;margin-top:10px;border-radius:11px}}
-.prompt-card:first-child{margin-top:0}
-.prompt-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;gap:8px}
-.prompt-label{display:flex;align-items:center;gap:5px;font-size:0.65rem;font-weight:700;color:#00e5cc;flex:1}
-@media(min-width:640px){.prompt-label{font-size:0.7rem;gap:6px}}
-.prompt-label svg{width:12px;height:12px;fill:#00e5cc;flex-shrink:0}
-@media(min-width:640px){.prompt-label svg{width:13px;height:13px}}
-.copy-btn{font-size:0.58rem;padding:3px 8px;border-radius:6px;background:rgba(0,229,204,0.1);border:1px solid rgba(0,229,204,0.2);color:#00e5cc;cursor:pointer;font-family:inherit;font-weight:600;transition:all 0.3s;flex-shrink:0}
-@media(min-width:640px){.copy-btn{font-size:0.62rem;padding:4px 10px;border-radius:7px}}
-.copy-btn:hover{background:rgba(0,229,204,0.2);transform:scale(1.05)}
-.copy-btn.copied{background:rgba(0,229,204,0.3);color:#fff}
-.prompt-text{font-size:0.68rem;line-height:1.5;color:#d0d0e0;white-space:pre-wrap;word-break:break-word}
-@media(min-width:640px){.prompt-text{font-size:0.73rem;line-height:1.55}}
+
+/* ===== AI PROMPTS MODAL ===== */
+.ai-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:0;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.ai-modal-overlay.active{display:flex;animation:fadeIn 0.3s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.ai-modal{background:linear-gradient(180deg,#0f0f1a 0%,#0C0C0C 100%);border:1px solid rgba(0,229,204,0.12);border-radius:20px;max-width:640px;width:100%;margin:auto;position:relative;overflow:hidden;box-shadow:0 0 60px rgba(0,229,204,0.08),0 20px 60px rgba(0,0,0,0.5);animation:slideUp 0.4s cubic-bezier(0.34,1.56,0.64,1)}
+@media(min-width:640px){.ai-modal{border-radius:24px;margin:40px auto}}
+@keyframes slideUp{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
+.ai-modal-close{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;transition:all 0.3s}
+@media(min-width:640px){.ai-modal-close{top:16px;right:16px;width:40px;height:40px}}
+.ai-modal-close svg{width:16px;height:16px;fill:#d0d0e0}
+@media(min-width:640px){.ai-modal-close svg{width:18px;height:18px}}
+.ai-modal-close:hover{background:rgba(255,80,80,0.15);border-color:rgba(255,80,80,0.3);transform:rotate(90deg)}
+.ai-modal-close:hover svg{fill:#ff5050}
+
+.ai-modal-header{padding:24px 20px 16px;text-align:center;position:relative}
+@media(min-width:640px){.ai-modal-header{padding:36px 32px 20px}}
+.ai-modal-icon{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(0,229,204,0.12),rgba(0,139,255,0.08));border:1px solid rgba(0,229,204,0.2);margin-bottom:12px}
+@media(min-width:640px){.ai-modal-icon{width:56px;height:56px;border-radius:16px;margin-bottom:16px}}
+.ai-modal-icon svg{width:24px;height:24px;fill:#00e5cc}
+@media(min-width:640px){.ai-modal-icon svg{width:28px;height:28px}}
+.ai-modal-title{font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;line-height:0.9;font-size:1.8rem;background:linear-gradient(135deg,#00e5cc 0%,#0099ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+@media(min-width:480px){.ai-modal-title{font-size:2.2rem}}
+@media(min-width:640px){.ai-modal-title{font-size:2.8rem}}
+.ai-modal-subtitle{color:#7a7a92;font-weight:400;font-size:0.72rem;margin-top:8px;line-height:1.5}
+@media(min-width:640px){.ai-modal-subtitle{font-size:0.85rem;margin-top:10px}}
+
+.ai-modal-badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+@media(min-width:640px){.ai-modal-badges{margin-top:18px}}
+.ai-badge{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:9999px;font-size:0.58rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em}
+@media(min-width:640px){.ai-badge{font-size:0.65rem;padding:7px 14px;gap:6px}}
+.ai-badge svg{width:12px;height:12px;fill:currentColor}
+@media(min-width:640px){.ai-badge svg{width:13px;height:13px}}
+.ai-badge-free{color:#00e5cc;background:rgba(0,229,204,0.08);border:1px solid rgba(0,229,204,0.2)}
+.ai-badge-copy{color:#b388ff;background:rgba(179,136,255,0.08);border:1px solid rgba(179,136,255,0.2)}
+.ai-badge-support{color:#ff9100;background:rgba(255,145,0,0.08);border:1px solid rgba(255,145,0,0.2)}
+
+.ai-modal-body{padding:16px 16px 20px;max-height:60vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
+@media(min-width:640px){.ai-modal-body{padding:20px 24px 28px;max-height:65vh}}
+.ai-modal-body::-webkit-scrollbar{width:4px}
+.ai-modal-body::-webkit-scrollbar-track{background:transparent}
+.ai-modal-body::-webkit-scrollbar-thumb{background:rgba(0,229,204,0.2);border-radius:4px}
+
+/* Prompt Card */
+.prompt-video-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:14px;overflow:hidden;margin-bottom:12px;transition:all 0.3s}
+@media(min-width:640px){.prompt-video-card{border-radius:16px;margin-bottom:14px}}
+.prompt-video-card:hover{border-color:rgba(0,229,204,0.15)}
+.pvc-top{display:flex;gap:12px;padding:12px;align-items:flex-start}
+@media(min-width:640px){.pvc-top{padding:14px;gap:16px}}
+.pvc-thumb{width:100px;height:60px;border-radius:8px;object-fit:cover;flex-shrink:0;background:#0a0612}
+@media(min-width:640px){.pvc-thumb{width:130px;height:78px;border-radius:10px}}
+.pvc-info{flex:1;display:flex;flex-direction:column;gap:3px;min-width:0}
+.pvc-title{font-size:0.72rem;font-weight:600;color:#D7E2EA;line-height:1.3}
+@media(min-width:640px){.pvc-title{font-size:0.82rem}}
+.pvc-meta{font-size:0.58rem;color:#7a7a92;display:flex;gap:5px;flex-wrap:wrap}
+@media(min-width:640px){.pvc-meta{font-size:0.63rem;gap:6px}}
+.pvc-btn{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:8px;font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#fff;background:linear-gradient(135deg,#0099ff,#00e5cc);border:none;cursor:pointer;font-family:inherit;transition:all 0.3s;flex-shrink:0;margin-top:4px;align-self:flex-start}
+@media(min-width:640px){.pvc-btn{padding:8px 18px;font-size:0.65rem;border-radius:10px}}
+.pvc-btn svg{width:12px;height:12px;fill:currentColor}
+@media(min-width:640px){.pvc-btn svg{width:14px;height:14px}}
+.pvc-btn:hover{transform:translateY(-1px) scale(1.03);box-shadow:0 6px 20px rgba(0,229,204,0.3)}
+.pvc-btn.expanded{background:linear-gradient(135deg,#555,#333)}
+
+/* Prompt content (expandable) */
+.pvc-prompts{max-height:0;overflow:hidden;transition:max-height 0.4s ease;padding:0 12px}
+@media(min-width:640px){.pvc-prompts{padding:0 14px}}
+.pvc-prompts.expanded{max-height:3000px;padding:0 12px 12px}
+@media(min-width:640px){.pvc-prompts.expanded{padding:0 14px 14px}}
+.prompt-item{background:rgba(0,0,0,0.4);border:1px solid rgba(0,229,204,0.1);border-radius:10px;padding:12px;margin-top:8px}
+@media(min-width:640px){.prompt-item{padding:14px;border-radius:12px;margin-top:10px}}
+.prompt-item:first-child{margin-top:0}
+.prompt-item-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:8px}
+.prompt-item-label{display:flex;align-items:center;gap:5px;font-size:0.62rem;font-weight:700;color:#00e5cc}
+@media(min-width:640px){.prompt-item-label{font-size:0.7rem;gap:6px}}
+.prompt-item-label svg{width:12px;height:12px;fill:#00e5cc;flex-shrink:0}
+@media(min-width:640px){.prompt-item-label svg{width:14px;height:14px}}
+.prompt-copy-btn{display:inline-flex;align-items:center;gap:4px;font-size:0.58rem;padding:5px 10px;border-radius:7px;background:rgba(0,229,204,0.1);border:1px solid rgba(0,229,204,0.2);color:#00e5cc;cursor:pointer;font-family:inherit;font-weight:600;transition:all 0.3s;flex-shrink:0}
+@media(min-width:640px){.prompt-copy-btn{font-size:0.62rem;padding:6px 12px;border-radius:8px;gap:5px}}
+.prompt-copy-btn svg{width:11px;height:11px;fill:currentColor}
+@media(min-width:640px){.prompt-copy-btn svg{width:12px;height:12px}}
+.prompt-copy-btn:hover{background:rgba(0,229,204,0.2);transform:scale(1.05)}
+.prompt-copy-btn.copied{background:rgba(0,229,204,0.3);color:#fff;border-color:rgba(0,229,204,0.5)}
+.prompt-text{font-size:0.66rem;line-height:1.6;color:#c8c8e0;white-space:pre-wrap;word-break:break-word;font-weight:300}
+@media(min-width:640px){.prompt-text{font-size:0.73rem;line-height:1.65}}
+
+.ai-modal-footer{padding:16px 20px 24px;text-align:center;border-top:1px solid rgba(255,255,255,0.04)}
+@media(min-width:640px){.ai-modal-footer{padding:20px 32px 32px}}
+.ai-modal-yt-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:9999px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#fff;background:linear-gradient(135deg,#ff0000,#cc0000);border:none;cursor:pointer;font-family:inherit;transition:all 0.3s;text-decoration:none}
+@media(min-width:640px){.ai-modal-yt-btn{padding:14px 36px;font-size:0.82rem;gap:10px}}
+.ai-modal-yt-btn svg{width:16px;height:16px;fill:#fff}
+@media(min-width:640px){.ai-modal-yt-btn svg{width:20px;height:20px}}
+.ai-modal-yt-btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 10px 30px rgba(255,0,0,0.3)}
+.ai-modal-footer-text{font-size:0.6rem;color:#7a7a92;margin-top:12px}
+@media(min-width:640px){.ai-modal-footer-text{font-size:0.68rem}}
+
+/* CONTACT */
 .contact-section{background:#0C0C0C;padding:30px 16px 40px}
 @media(min-width:768px){.contact-section{padding:40px 16px 50px}}
 .contact-form-wrap{max-width:560px;margin:0 auto;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:16px;backdrop-filter:blur(10px)}
@@ -175,6 +285,7 @@ html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overfl
 </style>
 </head>
 <body>
+
 <section class="hero">
   <nav class="navbar fade-in" style="transition-delay:0s">
     <a href="#about" class="nav-link">About</a>
@@ -188,13 +299,21 @@ html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overfl
     </div>
     <h1 class="hero-heading hero-title fade-in" style="transition-delay:0.2s">MR. VICKY</h1>
     <p class="hero-tagline fade-in" style="transition-delay:0.35s">a creator driven by money earning, finance & building websites</p>
-    <a href="#contact" class="contact-btn fade-in" style="transition-delay:0.5s">Contact Me</a>
+    <div class="hero-buttons fade-in" style="transition-delay:0.5s">
+      <a href="#contact" class="contact-btn">Contact Me</a>
+      <button class="ai-prompt-btn" onclick="openAIModal()">
+        <svg viewBox="0 0 24 24"><path d="M12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"/></svg>
+        AI Prompts
+      </button>
+    </div>
   </div>
 </section>
+
 <section class="marquee-section">
   <div class="marquee-row" id="marquee-row-1"></div>
   <div class="marquee-row" id="marquee-row-2"></div>
 </section>
+
 <section class="about" id="about">
   <div class="about-deco" style="top:5%;left:3%;width:100px;height:100px;background:radial-gradient(circle,rgba(0,212,255,0.2),transparent 70%)"></div>
   <div class="about-deco" style="bottom:10%;left:8%;width:80px;height:80px;background:radial-gradient(circle,rgba(255,107,26,0.15),transparent 70%)"></div>
@@ -204,6 +323,7 @@ html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overfl
   <p class="about-text" id="about-text">With more than five years of experience in content creation, i focus on money earning strategies, finance, website building, and discovering new tools. i truly enjoy working with ideas that aim to stand out and help people grow. Let's build something incredible together!</p>
   <a href="#contact" class="contact-btn fade-in" style="transition-delay:0.2s">Contact Me</a>
 </section>
+
 <section class="services" id="services">
   <h2 class="services-heading fade-in">VIDEOS</h2>
   <div class="services-list">
@@ -214,8 +334,16 @@ html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overfl
     <div class="service-item fade-in"><span class="service-num">05</span><div class="service-content"><span class="service-name">Channel Vision</span><p class="service-desc">MR. VICKY is about simple ideas, real strategies, and a better you. Subscribe to join a growing community. New videos every week on money, finance, tools, and website building.</p></div></div>
   </div>
 </section>
+
 <section class="projects" id="projects">
   <h2 class="hero-heading projects-heading fade-in">WATCH</h2>
+  <div class="projects-cta fade-in">
+    <button class="projects-cta-btn" onclick="openAIModal()">
+      <svg viewBox="0 0 24 24"><path d="M12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"/></svg>
+      Get AI Prompts — 100% Free
+    </button>
+  </div>
+
   <div class="video-card fade-in">
     <a href="https://www.youtube.com/watch?v=9RzWDVzXGi0" target="_blank" style="text-decoration:none;color:inherit">
       <div class="video-thumb-wrap"><span class="badge-new">NEW</span><img src="https://i.ytimg.com/vi/9RzWDVzXGi0/hqdefault.jpg" alt="Motion Designers" onerror="this.style.display='none'"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
@@ -223,11 +351,13 @@ html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overfl
     </a>
     <button class="resources-btn" onclick="toggleResources(this,'res1')"><span class="resources-btn-left"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg> Video resources</span><span class="chev"><svg viewBox="0 0 24 24"><path fill="#00e5cc" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></span></button>
     <div class="resources-content" id="res1">
-      <div class="prompt-card"><div class="prompt-header"><div class="prompt-label"><svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> Prompt 1: Video Analysis</div><button class="copy-btn" onclick="copyPrompt(this,'prompt1')">Copy</button></div><div class="prompt-text" id="prompt1">Analyze this video scene by scene and generate detailed Ai video prompt for each shot/frame including camera angles, subject actions, lighting, environment, facial expressions, composition, transitions and cinematic style. Make the prompts accurate enough to recreate the video as close as possible. Make sure to include the exact texts in the video into the prompt.</div></div>
-      <div class="prompt-card"><div class="prompt-header"><div class="prompt-label"><svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> Prompt 2: Audio & Negative</div><button class="copy-btn" onclick="copyPrompt(this,'prompt2')">Copy</button></div><div class="prompt-text" id="prompt2">Use Professional sound effect design.\nNegative prompts: Do not include voice-over, Speech, or background music in the video. (If it has voice-over, speech, or background music, do not generate.)</div></div>
-      <div class="prompt-card"><div class="prompt-header"><div class="prompt-label"><svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> Prompt 3: Script Adaptation</div><button class="copy-btn" onclick="copyPrompt(this,'prompt3')">Copy</button></div><div class="prompt-text" id="prompt3">I want you to repurpose the video animation. I want you to change the 3D assets and elements in the animation and use assets and elements that suit and are relevant to this new narration script: ["AI isn't coming - it's already here, reshaping how we work, create, and think. Every industry is shifting. Every skill is evolving. Think about the best professionals; they adapt constantly and grow with the tools. Those who adapt will lead; those who resist will struggle to keep up. This isn't about replacing humans - it's about amplifying what we can do. The future favors the adaptable. Start now."].</div></div>
+      <div class="prompt-item"><div class="prompt-item-head"><div class="prompt-item-label"><svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> Prompt 1: Video Analysis</div><button class="prompt-copy-btn" onclick="copyPrompt(this,'prompt1')"><svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button></div><div class="prompt-text" id="prompt1">Analyze this video scene by scene and generate detailed Ai video prompt for each shot/frame including camera angles, subject actions, lighting, environment, facial expressions, composition, transitions and cinematic style. Make the prompts accurate enough to recreate the video as close as possible. Make sure to include the exact texts in the video into the prompt.</div></div>
+      <div class="prompt-item"><div class="prompt-item-head"><div class="prompt-item-label"><svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> Prompt 2: Audio & Negative</div><button class="prompt-copy-btn" onclick="copyPrompt(this,'prompt2')"><svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button></div><div class="prompt-text" id="prompt2">Use Professional sound effect design.
+Negative prompts: Do not include voice-over, Speech, or background music in the video. (If it has voice-over, speech, or background music, do not generate.)</div></div>
+      <div class="prompt-item"><div class="prompt-item-head"><div class="prompt-item-label"><svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> Prompt 3: Script Adaptation</div><button class="prompt-copy-btn" onclick="copyPrompt(this,'prompt3')"><svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button></div><div class="prompt-text" id="prompt3">I want you to repurpose the video animation. I want you to change the 3D assets and elements in the animation and use assets and elements that suit and are relevant to this new narration script: ["AI isn't coming - it's already here, reshaping how we work, create, and think. Every industry is shifting. Every skill is evolving. Think about the best professionals; they adapt constantly and grow with the tools. Those who adapt will lead; those who resist will struggle to keep up. This isn't about replacing humans - it's about amplifying what we can do. The future favors the adaptable. Start now."].</div></div>
     </div>
   </div>
+
   <div class="video-card fade-in">
     <a href="https://www.youtube.com/watch?v=P66FuHv69wg" target="_blank" style="text-decoration:none;color:inherit">
       <div class="video-thumb-wrap"><img src="https://i.ytimg.com/vi/P66FuHv69wg/hqdefault.jpg" alt="BILIBILI" onerror="this.style.display='none'"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
@@ -236,6 +366,7 @@ html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overfl
     <button class="resources-btn" onclick="toggleResources(this,'res2')"><span class="resources-btn-left"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg> Video resources</span><span class="chev"><svg viewBox="0 0 24 24"><path fill="#00e5cc" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></span></button>
     <div class="resources-content" id="res2"><div class="resource-placeholder">Add links, tools or notes.</div></div>
   </div>
+
   <div class="video-card fade-in">
     <a href="https://www.youtube.com/watch?v=6b3WhkzwP-o" target="_blank" style="text-decoration:none;color:inherit">
       <div class="video-thumb-wrap"><img src="https://i.ytimg.com/vi/6b3WhkzwP-o/hqdefault.jpg" alt="Meesho" onerror="this.style.display='none'"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
@@ -244,6 +375,7 @@ html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overfl
     <button class="resources-btn" onclick="toggleResources(this,'res3')"><span class="resources-btn-left"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg> Video resources</span><span class="chev"><svg viewBox="0 0 24 24"><path fill="#00e5cc" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></span></button>
     <div class="resources-content" id="res3"><div class="resource-placeholder">Add links, tools or notes.</div></div>
   </div>
+
   <div class="video-card fade-in">
     <a href="https://www.youtube.com/watch?v=tI3PHQt16xw" target="_blank" style="text-decoration:none;color:inherit">
       <div class="video-thumb-wrap"><img src="https://i.ytimg.com/vi/tI3PHQt16xw/hqdefault.jpg" alt="Self-Educated" onerror="this.style.display='none'"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
@@ -253,6 +385,120 @@ html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overfl
     <div class="resources-content" id="res4"><div class="resource-placeholder">Add links, tools or notes.</div></div>
   </div>
 </section>
+
+<!-- AI PROMPTS MODAL -->
+<div class="ai-modal-overlay" id="aiModalOverlay" onclick="closeAIModalOnBg(event)">
+  <div class="ai-modal" onclick="event.stopPropagation()">
+    <div class="ai-modal-close" onclick="closeAIModal()">
+      <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </div>
+    <div class="ai-modal-header">
+      <div class="ai-modal-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"/></svg>
+      </div>
+      <h2 class="ai-modal-title">AI Prompts</h2>
+      <p class="ai-modal-subtitle">Same prompts I use in my videos. Copy & use — 100% free.</p>
+      <div class="ai-modal-badges">
+        <span class="ai-badge ai-badge-free"><svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/></svg> 100% Free</span>
+        <span class="ai-badge ai-badge-copy"><svg viewBox="0 0 24 24"><path d="M7 2v11h3v3l4-3h4V2H7zm9 9h-4l-2 2v-2H9V4h7v7z"/></svg> Copy & Use</span>
+        <span class="ai-badge ai-badge-support"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg> Support My Channel</span>
+      </div>
+    </div>
+    <div class="ai-modal-body" id="aiModalBody">
+
+      <!-- Video 1: Motion Designers -->
+      <div class="prompt-video-card">
+        <div class="pvc-top">
+          <img class="pvc-thumb" src="https://i.ytimg.com/vi/9RzWDVzXGi0/hqdefault.jpg" alt="" onerror="this.style.display='none'">
+          <div class="pvc-info">
+            <div class="pvc-title">Motion Designers Will HATE This Video...</div>
+            <div class="pvc-meta"><span>9:27</span><span>•</span><span>8 views</span><span>•</span><span>NEW</span></div>
+            <button class="pvc-btn" onclick="toggleModalPrompts(this,'mp1')"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg> Get Prompts</button>
+          </div>
+        </div>
+        <div class="pvc-prompts" id="mp1">
+          <div class="prompt-item">
+            <div class="prompt-item-head"><div class="prompt-item-label"><svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> Video Analysis Prompt</div><button class="prompt-copy-btn" onclick="copyModalPrompt(this,'mp-p1')"><svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button></div>
+            <div class="prompt-text" id="mp-p1">Analyze this video scene by scene and generate detailed Ai video prompt for each shot/frame including camera angles, subject actions, lighting, environment, facial expressions, composition, transitions and cinematic style. Make the prompts accurate enough to recreate the video as close as possible. Make sure to include the exact texts in the video into the prompt.</div>
+          </div>
+          <div class="prompt-item">
+            <div class="prompt-item-head"><div class="prompt-item-label"><svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> Audio & Negative Prompt</div><button class="prompt-copy-btn" onclick="copyModalPrompt(this,'mp-p2')"><svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button></div>
+            <div class="prompt-text" id="mp-p2">Use Professional sound effect design.
+Negative prompts: Do not include voice-over, Speech, or background music in the video. (If it has voice-over, speech, or background music, do not generate.)</div>
+          </div>
+          <div class="prompt-item">
+            <div class="prompt-item-head"><div class="prompt-item-label"><svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> Script Adaptation Prompt</div><button class="prompt-copy-btn" onclick="copyModalPrompt(this,'mp-p3')"><svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button></div>
+            <div class="prompt-text" id="mp-p3">I want you to repurpose the video animation. I want you to change the 3D assets and elements in the animation and use assets and elements that suit and are relevant to this new narration script: ["AI isn't coming - it's already here, reshaping how we work, create, and think. Every industry is shifting. Every skill is evolving. Think about the best professionals; they adapt constantly and grow with the tools. Those who adapt will lead; those who resist will struggle to keep up. This isn't about replacing humans - it's about amplifying what we can do. The future favors the adaptable. Start now."].</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 2: BILIBILI -->
+      <div class="prompt-video-card">
+        <div class="pvc-top">
+          <img class="pvc-thumb" src="https://i.ytimg.com/vi/P66FuHv69wg/hqdefault.jpg" alt="" onerror="this.style.display='none'">
+          <div class="pvc-info">
+            <div class="pvc-title">I Tried BILIBILI App for Earning Money</div>
+            <div class="pvc-meta"><span>6:26</span><span>•</span><span>120 views</span></div>
+            <button class="pvc-btn" onclick="toggleModalPrompts(this,'mp2')"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg> Get Prompts</button>
+          </div>
+        </div>
+        <div class="pvc-prompts" id="mp2">
+          <div class="prompt-item">
+            <div class="prompt-item-head"><div class="prompt-item-label"><svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> App Review Prompt</div><button class="prompt-copy-btn" onclick="copyModalPrompt(this,'mp-p4')"><svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button></div>
+            <div class="prompt-text" id="mp-p4">Review this mobile app in detail. Cover the following aspects: 1) What is this app and what does it do? 2) How to sign up and get started 3) Ways to earn money on this platform 4) Payment methods and withdrawal process 5) Pros and cons 6) Is it legitimate or scam? 7) Final verdict and rating out of 10. Keep the tone honest and informative.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 3: Meesho -->
+      <div class="prompt-video-card">
+        <div class="pvc-top">
+          <img class="pvc-thumb" src="https://i.ytimg.com/vi/6b3WhkzwP-o/hqdefault.jpg" alt="" onerror="this.style.display='none'">
+          <div class="pvc-info">
+            <div class="pvc-title">How to Earn ₹5000 Per Week with Meesho Affiliate</div>
+            <div class="pvc-meta"><span>14:41</span><span>•</span><span>5.3K views</span></div>
+            <button class="pvc-btn" onclick="toggleModalPrompts(this,'mp3')"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg> Get Prompts</button>
+          </div>
+        </div>
+        <div class="pvc-prompts" id="mp3">
+          <div class="prompt-item">
+            <div class="prompt-item-head"><div class="prompt-item-label"><svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> Affiliate Marketing Guide Prompt</div><button class="prompt-copy-btn" onclick="copyModalPrompt(this,'mp-p5')"><svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button></div>
+            <div class="prompt-text" id="mp-p5">Create a detailed step-by-step guide for earning money through affiliate marketing. Include: 1) What is affiliate marketing and how it works 2) How to sign up for the affiliate program 3) How to choose profitable products to promote 4) Marketing strategies (social media, WhatsApp, YouTube) 5) How to generate affiliate links 6) Tips to increase conversions and sales 7) Payment threshold and withdrawal process 8) Common mistakes to avoid. Make it beginner-friendly in Hindi.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 4: Self-Educated -->
+      <div class="prompt-video-card">
+        <div class="pvc-top">
+          <img class="pvc-thumb" src="https://i.ytimg.com/vi/tI3PHQt16xw/hqdefault.jpg" alt="" onerror="this.style.display='none'">
+          <div class="pvc-info">
+            <div class="pvc-title">Dangerously Become a SELF-EDUCATED</div>
+            <div class="pvc-meta"><span>5:53</span><span>•</span><span>9 views</span></div>
+            <button class="pvc-btn" onclick="toggleModalPrompts(this,'mp4')"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg> Get Prompts</button>
+          </div>
+        </div>
+        <div class="pvc-prompts" id="mp4">
+          <div class="prompt-item">
+            <div class="prompt-item-head"><div class="prompt-item-label"><svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> Self-Education Motivation Prompt</div><button class="prompt-copy-btn" onclick="copyModalPrompt(this,'mp-p6')"><svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copy</button></div>
+            <div class="prompt-text" id="mp-p6">Write a powerful motivational script about the importance of self-education. Cover these points: 1) Why traditional education is not enough 2) The power of learning skills on your own 3) How self-educated people are changing the world 4) Practical steps to start self-education today 5) Best free resources for self-learning (YouTube, books, courses) 6) How to stay disciplined and consistent 7) The mindset shift needed to become self-educated. End with a powerful call-to-action that inspires the viewer to take action today.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="ai-modal-footer">
+      <a href="https://youtube.com/@mrvicky-0.1" target="_blank" class="ai-modal-yt-btn">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        Visit My YouTube Channel
+      </a>
+      <p class="ai-modal-footer-text">Learn Create Grow Together — MR. VICKY</p>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
 <section class="contact-section" id="contact">
   <div class="socials">
     <a href="https://youtube.com/@mrvicky-0.1" target="_blank" class="social-icon" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
@@ -284,22 +530,35 @@ html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overfl
     </div>
   </div>
 </section>
+
 <div class="footer"><p>© 2026 MR. VICKY — Learn Grow Succeed</p><p>Made with <span class="heart">♥</span> for our community</p></div>
+
 <script>
 var fadeObserver=new IntersectionObserver(function(e){e.forEach(function(t){if(t.isIntersecting)t.target.classList.add('visible')})},{threshold:0.05,rootMargin:'30px'});
 document.querySelectorAll('.fade-in').forEach(function(e){fadeObserver.observe(e)});
+
 var aboutText=document.getElementById('about-text');
 if(aboutText){var txt=aboutText.textContent;aboutText.innerHTML='';for(var i=0;i<txt.length;i++){var s=document.createElement('span');s.className='char';s.textContent=txt[i]===' '?'\u00A0':txt[i];aboutText.appendChild(s)}
 var chars=aboutText.querySelectorAll('.char');var to=new IntersectionObserver(function(e){e.forEach(function(t){if(t.isIntersecting)chars.forEach(function(c,i){setTimeout(function(){c.classList.add('lit')},i*20)})})},{threshold:0.1});to.observe(aboutText)}
+
 var thumbs=['https://i.ytimg.com/vi/9RzWDVzXGi0/hqdefault.jpg','https://i.ytimg.com/vi/P66FuHv69wg/hqdefault.jpg','https://i.ytimg.com/vi/6b3WhkzwP-o/hqdefault.jpg','https://i.ytimg.com/vi/tI3PHQt16xw/hqdefault.jpg','https://res.cloudinary.com/acqrwkcn/image/upload/v1788937314/file_000000009b548211bd6483b2dd13d99d.png','https://res.cloudinary.com/acqrwkcn/image/upload/v1788937188/1000124621.png'];
 var r1=document.getElementById('marquee-row-1'),r2=document.getElementById('marquee-row-2');
 function buildRow(r,imgs){var a=imgs.concat(imgs,imgs);a.forEach(function(s){var i=document.createElement('img');i.src=s;i.className='marquee-tile';i.loading='lazy';r.appendChild(i)})}
 buildRow(r1,thumbs.slice(0,4));buildRow(r2,thumbs.slice(2));
 var ms=document.querySelector('.marquee-section');
 window.addEventListener('scroll',function(){if(!ms)return;var o=(window.scrollY-ms.offsetTop+window.innerHeight)*0.3;if(r1)r1.style.transform='translateX('+(o-200)+'px)';if(r2)r2.style.transform='translateX('+(-(o-200))+'px)'},{passive:true});
+
 function switchTab(t,b){document.querySelectorAll('.tab-btn').forEach(function(x){x.classList.remove('active')});document.querySelectorAll('.tab-content').forEach(function(x){x.classList.remove('active')});b.classList.add('active');document.getElementById('tab-'+t).classList.add('active')}
 function toggleResources(b,id){var c=document.getElementById(id);if(c.classList.contains('expanded')){c.classList.remove('expanded');b.classList.remove('expanded')}else{c.classList.add('expanded');b.classList.add('expanded')}}
 function copyPrompt(b,id){var t=document.getElementById(id).innerText;navigator.clipboard.writeText(t).then(function(){b.innerText='Copied!';b.classList.add('copied');setTimeout(function(){b.innerText='Copy';b.classList.remove('copied')},2000)})}
+
+/* AI Modal */
+function openAIModal(){var m=document.getElementById('aiModalOverlay');m.classList.add('active');document.body.style.overflow='hidden'}
+function closeAIModal(){var m=document.getElementById('aiModalOverlay');m.classList.remove('active');document.body.style.overflow=''}
+function closeAIModalOnBg(e){if(e.target===e.currentTarget)closeAIModal()}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAIModal()});
+function toggleModalPrompts(b,id){var c=document.getElementById(id);if(c.classList.contains('expanded')){c.classList.remove('expanded');b.classList.remove('expanded');b.innerHTML='<svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg> Get Prompts'}else{c.classList.add('expanded');b.classList.add('expanded');b.innerHTML='<svg viewBox="0 0 24 24"><path d="M19 13H5v-2h14v2z"/></svg> Hide Prompts'}}
+function copyModalPrompt(b,id){var t=document.getElementById(id).innerText;navigator.clipboard.writeText(t).then(function(){var html=b.innerHTML;b.innerHTML='<svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Copied!';b.classList.add('copied');setTimeout(function(){b.innerHTML=html;b.classList.remove('copied')},2000)})}
 </script>
 </body>
 </html>
