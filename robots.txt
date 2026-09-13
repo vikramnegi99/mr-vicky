@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vikramnegi99.github.io/mr-vicky/sitemap.xml
